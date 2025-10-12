@@ -1,36 +1,174 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Choose Your Journey - Interactive Web Experience
+A smooth, playful interactive website built with Next.js, React, and Framer Motion that guides users through a themed journey with beautiful animations and transitions.
+🚀 Live Demo
+View Live Site (Replace with your actual Vercel URL)
+📋 Table of Contents
 
-## Getting Started
+Features
+Tech Stack
+Getting Started
+Project Structure
+Design Decisions
+Future Improvements
 
-First, run the development server:
+✨ Features
+Core Functionality
 
-```bash
-npm run dev
+Landing Page - Hero animation with engaging call-to-action
+Multi-Step Journey - Three interactive steps guiding user choices:
+
+Choose Your Destination
+Pick Your Activity
+Select Your Guide
+
+
+Summary Page - Displays user selections with animated elements
+Journey Reset - Smooth restart functionality
+
+Animations & Interactions
+
+Page Transitions - Smooth sliding/fading between steps using Framer Motion
+Element Entrances - Staggered animations for cards and content
+Hover Effects - Interactive feedback on all clickable elements
+Progress Indicator - Visual step counter showing journey progress
+Surprise Animation - Confetti celebration on completion
+
+Technical Features
+
+SEO Optimized - Unique meta tags and Open Graph data for each page
+Responsive Design - Mobile-first approach with Tailwind CSS
+Dark/Light Theme - Animated theme toggle with persistent preference
+Clean Architecture - Custom hooks and reusable components
+Type Safety - Full TypeScript implementation
+
+🛠 Tech Stack
+
+Framework: Next.js 14+ (App Router)
+Language: TypeScript
+Styling: Tailwind CSS
+Animations: Framer Motion
+State Management: React Hooks (useState, useMemo, custom hooks)
+Deployment: Vercel
+
+🏃 Getting Started
+Prerequisites
+
+Node.js 18+
+npm or yarn
+
+Installation
+
+Clone the repository
+
+bashgit clone https://github.com/yourusername/choose-your-journey.git
+cd choose-your-journey
+
+Install dependencies
+
+bashnpm install
+# or
+yarn install
+
+Run the development server
+
+bashnpm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 in your browser
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Build for Production
+bashnpm run build
+npm start
+📁 Project Structure
+├── app/
+│   ├── api/
+│   │   └── journet/
+│   │       └── routes.ts     # API
+│   ├── layout.tsx            # Root layout with theme provider
+│   └── page.tsx              # Landing page
+├── components/
+│   ├── JourneyApp.tsx # Main journey flow
+│   ├── ChoiseStep.tsx # Steps
+│   ├── ConfettiAnimation.tsx # Celebration animation
+│   ├── ProgressIndicator.tsx # Step counter
+│   ├── SummaryPage.tsx # Summary Page
+│   └── ThemeToggle.tsx       # Dark/light mode switch
+├── data/
+│   └── journey-data.json     # Static journey choices
+└── public/
+    └── images/               # Assets
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+🎨 Design Decisions
+Architecture
 
-## Learn More
+Custom Hooks: Created useJourneyData for reusable data fetching logic
+Component Composition: Separated concerns with focused, single-responsibility components
+Type Safety: Defined strict TypeScript interfaces for all data structures
 
-To learn more about Next.js, take a look at the following resources:
+Animation Strategy
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Framer Motion Variants: Used for consistent, reusable animation patterns
+useMemo Optimization: Memoized complex animation objects to prevent unnecessary recalculations
+Staggered Children: Implemented sequential animations for better visual flow
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Styling Approach
 
-## Deploy on Vercel
+Tailwind Utilities: Leveraged utility classes for rapid development
+Responsive Design: Mobile-first breakpoints (sm, md, lg, xl)
+Theme Variables: CSS custom properties for seamless dark/light mode transitions
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+SEO Implementation
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Metadata API: Used Next.js 14 metadata objects for each route
+Dynamic Titles: Step-specific titles and descriptions
+Open Graph: Social sharing optimization with preview images
+
+🚀 Deployment (Vercel)
+
+Push code to GitHub
+
+bashgit add .
+git commit -m "Initial commit"
+git push origin main
+
+Visit vercel.com and sign in with GitHub
+Click "New Project" → "Import Git Repository"
+Select your repository and click "Import"
+Vercel will auto-detect Next.js settings - click "Deploy"
+Your site will be live at https://your-project.vercel.app
+
+🔮 Future Improvements
+Features
+
+ User authentication to save journey history
+ Social sharing of completed journeys
+ More journey themes (Adventure, Wellness, Learning)
+ Journey templates and recommendations
+ Analytics to track popular choices
+
+Technical
+
+ Add E2E tests with Playwright
+ Implement React Query for advanced data fetching
+ Add Storybook for component documentation
+ Performance monitoring with Vercel Analytics
+ Accessibility audit and improvements (WCAG 2.1 AA)
+
+UX Enhancements
+
+ Sound effects for interactions (optional toggle)
+ More animation variations and Easter eggs
+ Journey export as shareable image/PDF
+ Undo/back functionality between steps
+ Keyboard navigation support
+
+📝 License
+
+MIT
+
+👤 Author
+
+Daniel Ehrlich - GitHub
+
+Built with ❤️ for Appcharge Frontend Assignment
