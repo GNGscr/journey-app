@@ -30,7 +30,7 @@ const JourneyApp: React.FC = () => {
     try {
       setIsLoading(true);
       setError(null);
-      const res = await fetch("http://localhost:3000/api/journey", { 
+      const res = await fetch("/api/journey", { 
         cache: "no-store"
       });
       
