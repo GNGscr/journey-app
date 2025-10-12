@@ -40,7 +40,7 @@ const JourneyApp: React.FC = () => {
       
       const data = await res.json();
       setJourneyData(data);
-      console.log('Journey data loaded:', data);
+      // console.log('Journey data loaded:', data);
     } catch (err) {
       console.error('Error fetching journey data:', err);
       setError(err instanceof Error ? err.message : 'Failed to load data');
