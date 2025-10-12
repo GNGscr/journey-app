@@ -1,0 +1,80 @@
+{
+    "destinations": [
+        {
+            "id": "paris",
+            "name": "Paris",
+            "emoji": "🗼",
+            "description": "City of lights and romance"
+        },
+        {
+            "id": "tokyo",
+            "name": "Tokyo",
+            "emoji": "🗾",
+            "description": "Modern meets tradition"
+        },
+        {
+            "id": "bali",
+            "name": "Bali",
+            "emoji": "🏝️",
+            "description": "Tropical paradise"
+        },
+        {
+            "id": "iceland",
+            "name": "Iceland",
+            "emoji": "🏔️",
+            "description": "Land of fire and ice"
+        }
+    ],
+    "activities": [
+        {
+            "id": "adventure",
+            "name": "Adventure",
+            "emoji": "🧗",
+            "description": "Thrilling experiences"
+        },
+        {
+            "id": "culture",
+            "name": "Culture",
+            "emoji": "🎭",
+            "description": "Art and history"
+        },
+        {
+            "id": "relaxation",
+            "name": "Relaxation",
+            "emoji": "🧘",
+            "description": "Peace and tranquility"
+        },
+        {
+            "id": "cuisine",
+            "name": "Cuisine",
+            "emoji": "🍜",
+            "description": "Culinary delights"
+        }
+    ],
+    "guides": [
+        {
+            "id": "expert",
+            "name": "Local Expert",
+            "emoji": "👨‍🏫",
+            "description": "Deep cultural insights"
+        },
+        {
+            "id": "adventurer",
+            "name": "Adventurer",
+            "emoji": "🧭",
+            "description": "Off the beaten path"
+        },
+        {
+            "id": "photographer",
+            "name": "Photographer",
+            "emoji": "📸",
+            "description": "Capture memories"
+        },
+        {
+            "id": "foodie",
+            "name": "Foodie",
+            "emoji": "👨‍🍳",
+            "description": "Taste local flavors"
+        }
+    ]
+}
