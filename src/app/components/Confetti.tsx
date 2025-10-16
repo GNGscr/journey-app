@@ -1,5 +1,5 @@
-import { motion, Variants } from "framer-motion";
 import { useMemo } from "react";
+import { motion, Variants } from "framer-motion";
 
 const Confetti: React.FC = () => {
     const confettiVariants: Variants = useMemo(() => ({
@@ -9,7 +9,7 @@ const Confetti: React.FC = () => {
         y: [0, 100 + Math.random() * 200],
         x: [-50 + Math.random() * 100, -100 + Math.random() * 200],
         rotate: Math.random() * 360,
-        transition: { duration: 2 + Math.random(), delay: i * 0.1 },
+        transition: { duration: 1 + Math.random(), delay: i * 0.1 },
       }),
     }), []);
       

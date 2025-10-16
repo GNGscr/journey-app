@@ -4,6 +4,21 @@ A smooth, playful interactive website built with Next.js, React, and Framer Moti
 
 ---
 
+
+> ⚠️ **Note regarding code submission**
+>
+> The version in the **`main`** branch represents the exact code submitted **before the assignment deadline**.
+>
+> A separate branch, **`post-submission-refactor`**, was created **after submission** to improve structure and readability.
+>  
+> These updates include **refactoring, cleanup, and code organization only** —  
+> no new features, design changes were made.
+
+> # This version represents how I would have submitted the project if I had a bit more time to polish it.
+
+
+---
+
 # 🚀 Live Demo
 View Live Site (Replace with your actual Vercel URL)
 📋 Table of Contents

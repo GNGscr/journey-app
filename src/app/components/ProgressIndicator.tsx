@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { progressIndicatorVariant } from "../variants/variants";
 import { ProgressIndicatorProps } from "../types";
 
 const ProgressIndicator: React.FC<ProgressIndicatorProps> = ({
@@ -10,10 +11,11 @@ const ProgressIndicator: React.FC<ProgressIndicatorProps> = ({
   return (
     <div className="fixed top-6 left-6 z-40">
       <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
+        variants={progressIndicatorVariant}
         className={`px-4 py-2 rounded-full ${
-          theme === "dark" ? "bg-white/10" : "bg-black/10"
+          theme === "dark"
+            ? "bg-white/10"
+            : "bg-black/10"
         } backdrop-blur-md`}
       >
         <p className="text-sm font-medium">Step {currentStep} of 3</p>

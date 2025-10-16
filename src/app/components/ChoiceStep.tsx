@@ -1,6 +1,7 @@
+import Head from "next/head";
 import { motion, Variants } from "framer-motion";
 import { ChoiceStepProps } from "../types";
-import Head from "next/head";
+import { choiceStepPageVariant, cardVariant, stepIconVariant } from "../variants/variants";
 
 const ChoiceStep: React.FC<ChoiceStepProps> = ({
   title,
@@ -10,18 +11,9 @@ const ChoiceStep: React.FC<ChoiceStepProps> = ({
   theme,
   onSelect,
 }) => {
-  const pageVariants: Variants = {
-    initial: { opacity: 0, x: 100 },
-    animate: { opacity: 1, x: 0 },
-    exit: { opacity: 0, x: -100 },
-  };
+  const pageVariants: Variants = choiceStepPageVariant;
 
-  const cardVariants: Variants = {
-    initial: { opacity: 0, y: 20, scale: 0.9 },
-    animate: { opacity: 1, y: 0, scale: 1 },
-    hover: { scale: 1.05, y: -5 },
-    tap: { scale: 0.95 },
-  };
+  const cardVariants: Variants = cardVariant;
 
   return (
     <>
@@ -38,8 +30,7 @@ const ChoiceStep: React.FC<ChoiceStepProps> = ({
         className="w-full max-w-4xl"
       >
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
+          variants={stepIconVariant}
           className="text-center mb-12"
         >
           {icon}

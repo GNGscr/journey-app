@@ -1,6 +1,14 @@
-export  type Theme = 'dark' | 'light';
+// Types
+
+export type Theme = 'dark' | 'light';
 
 export type SelectionType = 'destination' | 'activity' | 'guide';
+
+export type ErrorType = {
+  error: string | 'Something went worng!';
+};
+
+// Interfaces
 
 export interface JourneyItem {
   id: string;
@@ -9,13 +17,13 @@ export interface JourneyItem {
   description: string;
 }
   
-export  interface JourneyData {
+export interface JourneyData {
   destinations: JourneyItem[];
   activities: JourneyItem[];
   guides: JourneyItem[];
 }
 
-export  interface Selections {
+export interface Selections {
   destination: JourneyItem | null;
   activity: JourneyItem | null;
   guide: JourneyItem | null;
