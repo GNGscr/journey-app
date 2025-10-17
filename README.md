@@ -28,31 +28,31 @@ It emphasizes separation of concerns, type safety, and a clean layered structure
 
 # ⚙️ Key Features & Design Decisions
 
-**🧱 Modular Architecture —** each layer (UI, logic, data) has a dedicated responsibility.
+🧱 **Modular Architecture —** each layer (UI, logic, data) has a dedicated responsibility.
 
-**📂 Separation of Concerns —** presentation in components/, logic in hooks/, data in services/.
+📂 **Separation of Concerns —** presentation in components/, logic in hooks/, data in services/.
 
-**🚀 Scalable Structure —** new pages, steps, or data sources can be added effortlessly.
+🚀 **Scalable Structure —** new pages, steps, or data sources can be added effortlessly.
 
-**🧩 Type Safety —** centralized enums, types, and motion variants under constants/.
+🧩 **Type Safety —** centralized enums, types, and motion variants under constants/.
 
-**♻️ Reusable Logic —** introduced custom hooks (useJourneyData, useHandleSelection, etc.) to reduce duplication.
+♻️ **Reusable Logic —** introduced custom hooks (useJourneyData, useHandleSelection, etc.) to reduce duplication.
 
-**🌐 Data Layer Abstraction —** services/journey.ts cleanly separates data access, ready for future API or DB integration.
+🌐 **Data Layer Abstraction —** services/journey.ts cleanly separates data access, ready for future API or DB integration.
 
-**🏗️ Layout Separation —** layouts/JourneyApp.tsx defines the app shell and supports global providers or theming.
+🏗️ **Layout Separation —** layouts/JourneyApp.tsx defines the app shell and supports global providers or theming.
 
-**🎨 Composable UI —** ui/ folder contains small, reusable visual components (e.g. BarsLoader, Confetti, ProgressIndicator).
+🎨 **Composable UI —** ui/ folder contains small, reusable visual components (e.g. BarsLoader, Confetti, ProgressIndicator).
 
-**🌗 Dynamic Theming —** implemented light/dark mode toggle via useToggleTheme.
+🌗 **Dynamic Theming —** implemented light/dark mode toggle via useToggleTheme.
 
-**⚠️ Error & Loading States —** added smooth user feedback with ErrorMessage and custom loader components.
+⚠️ **Error & Loading States —** added smooth user feedback with ErrorMessage and custom loader components.
 
-**🎬 Animation Management —** centralized Framer Motion variants in variants/ for cleaner, consistent animation logic.
+🎬 **Animation Management —** centralized Framer Motion variants in variants/ for cleaner, consistent animation logic.
 
-**🧠 Optimized Rendering —** unified repeated JSX blocks (destination/activity/guide) into a dynamic map structure.
+🧠 **Optimized Rendering —** unified repeated JSX blocks (destination/activity/guide) into a dynamic map structure.
 
-**🔮 Future-Ready —** easy to expand, migrate data sources, or enhance UX without breaking the architecture.
+🔮 **Future-Ready —** easy to expand, migrate data sources, or enhance UX without breaking the architecture.
 
 # 🧩 Folder Structure Philosophy
 
