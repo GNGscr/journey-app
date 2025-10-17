@@ -2,7 +2,8 @@ import { useMemo } from "react";
 import { motion, Variants } from "framer-motion";
 
 const Confetti: React.FC = () => {
-    const confettiVariants: Variants = useMemo(() => ({
+  const confettiVariants: Variants = useMemo(
+    () => ({
       initial: { opacity: 0, y: -100 },
       animate: (i: number) => ({
         opacity: [0, 1, 1, 0],
@@ -10,9 +11,10 @@ const Confetti: React.FC = () => {
         x: [-50 + Math.random() * 100, -100 + Math.random() * 200],
         rotate: Math.random() * 360,
         transition: { duration: 1 + Math.random(), delay: i * 0.1 },
-      }),
-    }), []);
-      
+      })
+    }),
+    []
+  );
 
   return (
     <div className="fixed inset-0 pointer-events-none z-30">

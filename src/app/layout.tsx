@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Journey } from "./enums";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Journey App",
-  description: "Choose Your Journey",
+  description: Journey.CHOOSE_YOUR_JOURNEY,
   icons: [
     {url: 'https://www.appcharge.com/favicon.ico'}
   ]

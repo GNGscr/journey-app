@@ -1,7 +1,12 @@
 import Head from "next/head";
 import { motion, Variants } from "framer-motion";
+import {
+  choiceStepPageVariant,
+  cardVariant,
+  stepIconVariant,
+} from "../variants/variants";
 import { ChoiceStepProps } from "../types";
-import { choiceStepPageVariant, cardVariant, stepIconVariant } from "../variants/variants";
+import { Themes, Stpes } from "../enums";
 
 const ChoiceStep: React.FC<ChoiceStepProps> = ({
   title,
@@ -12,14 +17,14 @@ const ChoiceStep: React.FC<ChoiceStepProps> = ({
   onSelect,
 }) => {
   const pageVariants: Variants = choiceStepPageVariant;
-
   const cardVariants: Variants = cardVariant;
-
+  const { DARK } = Themes;
+  const { CHOISES_STEP } = Stpes;
   return (
     <>
       <Head>
-        <title>Choises Step</title>
-        <meta name="description" content="Choises Step" />
+        <title>{CHOISES_STEP}</title>
+        <meta name="description" content={CHOISES_STEP} />
       </Head>
       <motion.div
         variants={pageVariants}
@@ -29,13 +34,10 @@ const ChoiceStep: React.FC<ChoiceStepProps> = ({
         transition={{ duration: 0.5 }}
         className="w-full max-w-4xl"
       >
-        <motion.div
-          variants={stepIconVariant}
-          className="text-center mb-12"
-        >
+        <motion.div variants={stepIconVariant} className="text-center mb-12">
           {icon}
           <h2 className="text-4xl font-bold mb-2">{title}</h2>
-          <p className={theme === "dark" ? "text-gray-400" : "text-gray-600"}>
+          <p className={theme === DARK ? "text-gray-400" : "text-gray-600"}>
             {description}
           </p>
         </motion.div>
@@ -52,14 +54,14 @@ const ChoiceStep: React.FC<ChoiceStepProps> = ({
               transition={{ delay: i * 0.1 }}
               onClick={() => onSelect(item)}
               className={`p-6 rounded-2xl cursor-pointer ${
-                theme === "dark"
+                theme === DARK
                   ? "bg-white/10 hover:bg-white/20"
                   : "bg-white hover:bg-gray-50"
               } backdrop-blur-md shadow-xl`}
             >
               <div className="text-5xl mb-3">{item.emoji}</div>
               <h3 className="text-2xl font-bold mb-2">{item.name}</h3>
-              <p className={theme === "dark" ? "text-gray-400" : "text-gray-600"}>
+              <p className={theme === DARK ? "text-gray-400" : "text-gray-600"}>
                 {item.description}
               </p>
             </motion.div>

@@ -221,3 +221,36 @@ export const themeToggleVariant = {
     stiffness: 300,
   }
 };
+
+export const errorVariant = {
+  initial: {
+    scale: 0.8,
+    opacity: 0
+  },
+  animate: {
+    scale: 2,
+    opacity: 1
+  },
+  transition: {
+    delay: 0.3,
+    type: 'spring',
+    stiffness: 200
+  }
+};
+
+export const loaderVariant = {
+  initial: {
+    scaleY: 0,
+    opacity: 0
+  },
+  animate: {
+    scaleY: 1,
+    opacity: 1,
+    transition: {
+      repeat: Infinity,
+      repeatType: "loop",
+      duration: 0.5,
+      ease: "easeInOut",
+    }
+  }
+}
