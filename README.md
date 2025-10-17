@@ -115,6 +115,7 @@ npm start
 
 # 📁 Project Structure
 
+```bash
 src/
 ├── app/
 │   ├── api/
@@ -156,14 +157,8 @@ src/
 │   ├── globals.css
 │   ├── layout.tsx
 │   └── page.tsx
-├── public/
-│   └── og-image.png                    # Open Graph image for social sharing
-├── package.json
-├── tsconfig.json
-├── tailwind.config.ts
-├── next.config.js
-└── README.md
 
+```
 
 ---
 
