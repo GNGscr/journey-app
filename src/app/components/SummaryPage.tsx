@@ -2,7 +2,6 @@ import React from "react";
 import Head from "next/head";
 import { motion, Variants } from "framer-motion";
 import { RotateCcw, Check } from "lucide-react";
-import { SummaryPageProps } from "../types";
 import {
   summaryPageVariant,
   summarySpringVariant,
@@ -11,6 +10,8 @@ import {
   restartWrpVariant,
   restartVariant,
 } from "../variants/variants";
+import { Themes, Summary } from "../enums";
+import { SummaryPageProps } from "../types";
 const Confetti = React.lazy(() => import("./Confetti"));
 
 const SummaryPage: React.FC<SummaryPageProps> = ({
@@ -19,13 +20,14 @@ const SummaryPage: React.FC<SummaryPageProps> = ({
   showConfetti,
   onRestart,
 }) => {
-
+  const { DARK } = Themes;
+  const { SUMMARY_PAGE, YOUR_JOURNEY_AWAITS, RESTART_JOURNEY } = Summary;
   const pageVariants: Variants = summaryPageVariant;
   return (
     <>
       <Head>
-        <title>Summary Page</title>
-        <meta name="description" content="This is the Final Summary Page" />
+        <title>{SUMMARY_PAGE}</title>
+        <meta name="description" content={`This is the Final ${SUMMARY_PAGE}`} />
       </Head>
       <motion.div
         key="summary"
@@ -49,7 +51,7 @@ const SummaryPage: React.FC<SummaryPageProps> = ({
             className={`text-5xl font-bold mb-4
             bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent`}
           >
-            Your Journey Awaits!
+            {YOUR_JOURNEY_AWAITS}
           </h2>
         </motion.div>
 
@@ -62,7 +64,7 @@ const SummaryPage: React.FC<SummaryPageProps> = ({
                   variants={selectionVariant}
                   transition={{ delay: 0.5 + index * 0.2 }}
                   className={`p-6 rounded-2xl ${
-                    theme === "dark" ? "bg-white/10" : "bg-white"
+                    theme === DARK ? "bg-white/10" : "bg-white"
                   } backdrop-blur-md shadow-xl`}
                 >
                   <div className="flex items-center gap-4">
@@ -70,7 +72,7 @@ const SummaryPage: React.FC<SummaryPageProps> = ({
                     <div>
                       <p
                         className={`text-sm mb-1 ${
-                          theme === "dark" ? "text-gray-400" : "text-gray-600"
+                          theme === DARK ? "text-gray-400" : "text-gray-600"
                         }`}
                       >
                         {key.charAt(0).toUpperCase() + key.slice(1)}
@@ -78,7 +80,7 @@ const SummaryPage: React.FC<SummaryPageProps> = ({
                       <h3 className="text-2xl font-bold">{selection.name}</h3>
                       <p
                         className={
-                          theme === "dark" ? "text-gray-400" : "text-gray-600"
+                          theme === DARK ? "text-gray-400" : "text-gray-600"
                         }
                       >
                         {selection.description}
@@ -99,7 +101,7 @@ const SummaryPage: React.FC<SummaryPageProps> = ({
               inline-flex items-center gap-2`}
           >
             <RotateCcw size={20} />
-            Restart Journey
+            {RESTART_JOURNEY}
           </motion.button>
         </motion.div>
       </motion.div>

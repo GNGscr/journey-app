@@ -1,24 +1,15 @@
 import { motion, Variants } from "framer-motion";
+import { loaderVariant } from "../variants/variants";
 import { Theme } from "../types";
+import { Themes } from "../enums";
 
-export default function BarsLoader({theme}: { theme: Theme }) {
-  const loaderVariants: Variants = {
-    initial: { scaleY: 0, opacity: 0 },
-    animate: {
-      scaleY: 1,
-      opacity: 1,
-      transition: {
-        repeat: Infinity,
-        repeatType: "loop",
-        duration: 0.5,
-        ease: "easeInOut",
-      },
-    },
-  };
+export default function BarsLoader({ theme }: { theme: Theme }) {
+  const { DARK } = Themes;
+  const loaderVariants: Variants = { loaderVariant };
   return (
     <div className={`h-screen grid place-content-center px-4 py-24
       ${
-        theme === "dark"
+        theme === DARK
           ? "bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900"
           : "bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50"
       }`}

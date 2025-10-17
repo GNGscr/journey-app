@@ -7,15 +7,18 @@ import useThemeBackground from "../hooks/useThemeBackground";
 import useHandleSelection from "../hooks/useHandleSelection";
 import useConfettiEffect from "../hooks/useConfettiEffect";
 import JourneySteps from "../steps/JourneySteps";
+import { Themes } from "../enums";
 const ThemeToggle = React.lazy(() => import("../components/ThemeToggle"));
 const ProgressIndicator = React.lazy(() => import("../components/ProgressIndicator"));
 const BarsLoader = React.lazy(() => import("../components/BarsLoader"));
 const ErrorMessage = React.lazy(() => import("../components/ErrorMessage"));
 
 export default function JourneyApp() {
-  const nullSelections = { destination: null, activity: null, guide: null };
 
-  const [theme, setTheme] = useState<Theme>("dark");
+  const nullSelections = { destination: null, activity: null, guide: null };
+    
+  const { DARK, LIGHT } = Themes;
+  const [theme, setTheme] = useState<Theme>(DARK);
   const [currentStep, setCurrentStep] = useState<number>(0);
   const [selections, setSelections] = useState<Selections>(nullSelections);
   const [showConfetti, setShowConfetti] = useState<boolean>(false);
@@ -23,9 +26,6 @@ export default function JourneyApp() {
   const { journeyData, isLoading, error } = useJourneyData({
     url: "/api/journey",
   });
-
-  const toggleTheme = (): void =>
-    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
 
   const handleSelection = useHandleSelection(setSelections, setCurrentStep);
 
@@ -49,15 +49,18 @@ export default function JourneyApp() {
     setCurrentStep
   );
 
-  if (!journeyData) return null;
-  if (isLoading) return <BarsLoader theme={theme} />;
-  if (error) return <ErrorMessage error={error} />;
+if (isLoading) return <BarsLoader theme={theme} />;
+if (error) return <ErrorMessage error={error} />;
+if (!journeyData) return null;
 
   return (
     <div
       className={`min-h-screen transition-colors duration-500 ${themeBackground}`}
     >
-      <ThemeToggle theme={theme} onToggle={toggleTheme} />
+      <ThemeToggle
+        theme={theme}
+        onToggle={() => setTheme((prev) => (prev === DARK ? LIGHT : DARK))}
+    />
       <ProgressIndicator currentStep={currentStep} theme={theme} />
 
       <div className="container mx-auto px-4 py-8 min-h-screen flex items-center justify-center">
@@ -67,4 +70,4 @@ export default function JourneyApp() {
       </div>
     </div>
   );
-}
+};
