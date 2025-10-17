@@ -12,7 +12,9 @@ A smooth, playful interactive website built with Next.js, React, and Framer Moti
 >  
 > These updates include **refactoring, cleanup, optimization, code organization + adding custom loader, error component** 
 
-> **💡 This version represents how I would have submitted the project if I had a bit more time to polish it.**
+---
+
+> ***This version represents how I would have submitted the project if I had a bit more time to polish it.***
 >
 
 
