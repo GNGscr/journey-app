@@ -14,7 +14,7 @@ A smooth, playful interactive website built with Next.js, React, and Framer Moti
 > These updates include **refactoring, cleanup, and code organization only** —  
 > no new features, design changes were made.
 
-> **This version represents how I would have submitted the project if I had a bit more time to polish it.**
+> This version represents how I would have submitted the project if I had a bit more time to polish it.
 >
 
 ---
