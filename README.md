@@ -150,6 +150,25 @@ npm start
 
 ---
 
+# 🧩 Folder Philosophy
+
+
+**The project is organized for clarity, scalability, and maintainability:**
+
+**Separation of Concerns –** UI, logic, and data are decoupled into focused layers (components, hooks, services).
+
+**Scalable Structure –** Designed to grow naturally as features expand (e.g., new pages, steps, or API routes).
+
+**Consistency & Reuse –** Shared logic is extracted into custom hooks and reusable UI components.
+
+**Readable Architecture –** Each folder name reflects its responsibility, reducing cognitive load for future contributors.
+
+**API Abstraction –** The services/ layer isolates data fetching, making it easy to migrate from static JSON to real APIs.
+
+**Type Safety –** All domain entities and enums are centralized under constants/ for predictable behavior and typing.
+
+---
+
 # 📁 Project Structure
 
 ```bash
