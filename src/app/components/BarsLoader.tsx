@@ -1,11 +1,22 @@
 import { motion, Variants } from "framer-motion";
-import { loaderVariant } from "../variants/variants";
 import { Theme } from "../types";
 import { Themes } from "../enums";
 
-export default function BarsLoader({ theme }: { theme: Theme }) {
+export default function BarsLoader({theme}: { theme: Theme }) {
   const { DARK } = Themes;
-  const loaderVariants: Variants = { loaderVariant };
+  const loaderVariants: Variants = {
+    initial: { scaleY: 0, opacity: 0 },
+    animate: {
+      scaleY: 1,
+      opacity: 1,
+      transition: {
+        repeat: Infinity,
+        repeatType: "loop",
+        duration: 0.5,
+        ease: "easeInOut",
+      }
+    }
+  };
   return (
     <div className={`h-screen grid place-content-center px-4 py-24
       ${

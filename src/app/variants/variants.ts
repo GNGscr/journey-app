@@ -237,20 +237,3 @@ export const errorVariant = {
     stiffness: 200
   }
 };
-
-export const loaderVariant = {
-  initial: {
-    scaleY: 0,
-    opacity: 0
-  },
-  animate: {
-    scaleY: 1,
-    opacity: 1,
-    transition: {
-      repeat: Infinity,
-      repeatType: "loop",
-      duration: 0.5,
-      ease: "easeInOut",
-    }
-  }
-}
