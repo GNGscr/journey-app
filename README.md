@@ -111,6 +111,8 @@ bashnpm run build
 
 npm start
 
+---
+
 # 📁 Project Structure
 
 src/
@@ -121,13 +123,13 @@ src/
 │   ├── layouts/
 │   │   └── JourneyApp.tsx              # Main layout wrapper
 │   ├── components/
-│   │   ├── pages/                      # Top-level pages
+│   │   ├── pages/                      # Top-level pages (entry points)
 │   │   │   ├── LandingPage.tsx
 │   │   │   └── SummaryPage.tsx
 │   │   ├── steps/                      # Step-by-step flow components
 │   │   │   ├── ChoiceStep.tsx
 │   │   │   └── JourneySteps.tsx
-│   │   └── ui/                         # Reusable UI components
+│   │   └── ui/                         # Reusable UI elements and micro-interactions
 │   │       ├── BarsLoader.tsx
 │   │       ├── Confetti.tsx
 │   │       ├── ErrorMessage.tsx
@@ -136,8 +138,8 @@ src/
 │   ├── data/
 │   │   └── journeyData.json            # Default static dataset
 │   ├── services/
-│   │   └── journey.ts                  # API / data-fetching abstraction
-│   ├── hooks/                          # Custom hooks
+│   │   └── journey.ts                  # API / data-fetching abstraction layer
+│   ├── hooks/                          # Custom hooks for logic reusability
 │   │   ├── useConfettiEffect.ts
 │   │   ├── useHandleSelection.ts
 │   │   ├── useJourneyData.ts
@@ -154,6 +156,13 @@ src/
 │   ├── globals.css
 │   ├── layout.tsx
 │   └── page.tsx
+├── public/
+│   └── og-image.png                    # Open Graph image for social sharing
+├── package.json
+├── tsconfig.json
+├── tailwind.config.ts
+├── next.config.js
+└── README.md
 
 
 ---
