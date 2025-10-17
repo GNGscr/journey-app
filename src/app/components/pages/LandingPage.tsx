@@ -7,9 +7,9 @@ import {
   chooseJourneyVariant,
   embarkAdventureVariant,
   startJourneyVariant,
-} from "../variants/variants";
-import { LandingPageProps } from "../types";
-import { Themes, Journey } from "../enums";
+} from "../../constants/variants/variants";
+import { LandingPageProps } from "../../constants/types";
+import { Themes, Journey } from "../../constants/enums";
 
 const LandingPage: React.FC<LandingPageProps> = ({ theme, onStart }) => {
   const { DARK } = Themes;

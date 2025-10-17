@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { Sun, Moon } from "lucide-react";
-import { themeToggleVariant } from "../variants/variants";
-import { ThemeToggleProps } from "../types";
-import { Themes } from "../enums";
+import { themeToggleVariant } from "../../constants/variants/variants";
+import { ThemeToggleProps } from "../../constants/types";
+import { Themes } from "../../constants/enums";
 const { DARK } = Themes;
 
 const ThemeToggle: React.FC<ThemeToggleProps> = ({ theme, onToggle }) => (

@@ -1,4 +1,4 @@
-import { Themes } from "../enums";
+import { Themes } from "../constants/enums";
 const { DARK } = Themes;
 
 const useThemeBackground = ({ theme }: { theme: string }) => {

@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { JourneyItem, Selections } from "@/app/types";
+import { JourneyItem, Selections } from "../constants/types";
 
 const useHandleSelection = (
   setSelections: React.Dispatch<React.SetStateAction<Selections>>,

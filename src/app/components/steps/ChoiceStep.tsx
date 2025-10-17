@@ -4,9 +4,9 @@ import {
   choiceStepPageVariant,
   cardVariant,
   stepIconVariant,
-} from "../variants/variants";
-import { ChoiceStepProps } from "../types";
-import { Themes, Stpes } from "../enums";
+} from "../../constants/variants/variants";
+import { ChoiceStepProps } from "../../constants/types";
+import { Themes, Stpes } from "../../constants/enums";
 
 const ChoiceStep: React.FC<ChoiceStepProps> = ({
   title,

@@ -9,10 +9,10 @@ import {
   selectionVariant,
   restartWrpVariant,
   restartVariant,
-} from "../variants/variants";
-import { Themes, Summary } from "../enums";
-import { SummaryPageProps } from "../types";
-const Confetti = React.lazy(() => import("./Confetti"));
+} from "../../constants/variants/variants";
+import { Themes, Summary } from "../../constants/enums";
+import { SummaryPageProps } from "../../constants/types";
+const Confetti = React.lazy(() => import("../ui/Confetti"));
 
 const SummaryPage: React.FC<SummaryPageProps> = ({
   selections,

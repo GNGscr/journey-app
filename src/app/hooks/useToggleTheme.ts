@@ -1,5 +1,5 @@
-import { Theme } from "@/app/types";
-import { Themes } from "../enums";
+import { Theme } from "../constants/types";
+import { Themes } from "../constants/enums";
 const { DARK, LIGHT } = Themes;
 
 const useThemeToggle = (setTheme: React.Dispatch<React.SetStateAction<Theme>>) => {
