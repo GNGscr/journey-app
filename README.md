@@ -18,6 +18,41 @@ A smooth, playful interactive website built with Next.js, React, and Framer Moti
 
 ---
 
+# Architecture Key Features
+
+- Modular Architecture - Clean separation of concerns
+- Type Safety - Full TypeScript coverage
+- Custom Hooks - Reusable logic extraction
+- API Layer - Abstracted data fetching
+- Animations - Smooth Framer Motion transitions
+- Theming - Dark/light mode support
+- Error Handling - Graceful fallbacks
+- Loading States - User feedback during async operations
+
+```bash
+refactor(project-structure): reorganize folders into clear, modular architecture
+
+- Moved main layout (JourneyApp) into layouts/ for cleaner separation of app shell.
+- Split components into domain-based folders:
+  - pages/ for top-level screens (LandingPage, SummaryPage)
+  - steps/ for step-by-step flow logic (ChoiceStep, JourneySteps)
+  - ui/ for reusable visual components (Loader, Confetti, ProgressIndicator, etc.)
+- Added services/ layer for data handling and API abstraction (journey.ts)
+- Grouped enums, types, and variants under constants/ for centralized definitions.
+- Improved project scalability and clarity by separating logic, UI, and data layers.
+
+```
+
+# Note
+This structure follows Next.js 14+ App Router conventions with:
+
+Server components by default
+Client components marked with 'use client'
+API routes in app/api/
+Clean separation between UI, logic, and data layers
+
+---
+
 # 🚀 Live Demo
 View Live Site (Replace with your actual Vercel URL)
 📋 Table of Contents
@@ -95,13 +130,13 @@ cd choose-your-journey
 # Install dependencies
 
 bashnpm install
-# or
+**or**
 yarn install
 
 Run the development server
 
 bashnpm run dev
-# or
+**or**
 yarn dev
 
 Open http://localhost:3000 in your browser
