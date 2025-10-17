@@ -10,7 +10,7 @@ A smooth, playful interactive website built with Next.js, React, and Framer Moti
 >
 > A separate branch, **`post-submission-refactor`**, was created **after submission** to improve structure and readability.
 >  
-> These updates include **refactoring, cleanup, code organization + adding custom loader, error component** 
+> These updates include **refactoring, cleanup, optimization, code organization + adding custom loader, error component** 
 
 > **💡 This version represents how I would have submitted the project if I had a bit more time to polish it.**
 >
@@ -19,14 +19,17 @@ A smooth, playful interactive website built with Next.js, React, and Framer Moti
 
 # Architecture Key Features
 
-- Modular Architecture - Clean separation of concerns
-- Type Safety - Full TypeScript coverage
-- Custom Hooks - Reusable logic extraction
-- API Layer - Abstracted data fetching
-- Animations - Smooth Framer Motion transitions
-- Theming - Dark/light mode support
-- Error Handling - Graceful fallbacks
-- Loading States - User feedback during async operations
+- Modular Architecture - Clean separation of concerns.
+- Type Safety - Full TypeScript coverage.
+- Custom Hooks - Reusable logic extraction.
+- API Layer - Abstracted data fetching.
+- Animations - Smooth Framer Motion transitions.
+- Theming - Dark/light mode support.
+- Error Handling - Graceful fallbacks.
+- Loading States - User feedback during async operations.
+- Optimization - Unified the rendering of 'selections' into a dynamic usage via map (instead of repeating same structure three times) - keeps readability, cleanness and flexibility for future component expension.
+- Support for future scaling - seperation of concerns, seperation of layers (API handler only connects between the services layer and the HTTP layer), can easily change db source (DB/API) without changing 'route.ts'.
+- Animation Variants - moved most framer-motion variants to specific folder to handle all in single place and also to present a cleaner jsx
 
 ---
 
