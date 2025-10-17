@@ -65,12 +65,13 @@ Clean separation between UI, logic, and data layers
 ---
 
 # ✨ Features
-Core Functionality
+
+**Core Functionality -**
 
 Landing Page - Hero animation with engaging call-to-action
 Multi-Step Journey - Three interactive steps guiding user choices:
 
-**Choose Your Destination**
+**Choose Your Destination -**
 Pick Your Activity
 Select Your Guide
 
@@ -78,7 +79,7 @@ Select Your Guide
 Summary Page - Displays user selections with animated elements
 Journey Reset - Smooth restart functionality
 
-**Animations & Interactions**
+**Animations & Interactions -**
 
 Page Transitions - Smooth sliding/fading between steps using Framer Motion
 Element Entrances - Staggered animations for cards and content
@@ -86,7 +87,7 @@ Hover Effects - Interactive feedback on all clickable elements
 Progress Indicator - Visual step counter showing journey progress
 Surprise Animation - Confetti celebration on completion
 
-**Technical Features**
+**Technical Features -**
 
 SEO Optimized - Unique meta tags and Open Graph data for each page
 Responsive Design - Mobile-first approach with Tailwind CSS
@@ -146,7 +147,9 @@ Open http://localhost:3000 in your browser
 # Build for Production
 bash npm run build
 
+```bash
 npm start
+```
 
 ---
 
@@ -263,7 +266,7 @@ Your site will be live at https://your-project.vercel.app
 
 # 🔮 Future Improvements
 
-**Features**
+**Features -**
 
  User authentication to save journey history
  Social sharing of completed journeys
@@ -271,7 +274,7 @@ Your site will be live at https://your-project.vercel.app
  Journey templates and recommendations
  Analytics to track popular choices
 
-**Technical**
+**Technical -**
 
  Add E2E tests with Playwright
  Implement React Query for advanced data fetching
@@ -279,7 +282,7 @@ Your site will be live at https://your-project.vercel.app
  Performance monitoring with Vercel Analytics
  Accessibility audit and improvements (WCAG 2.1 AA)
 
-**UX Enhancements**
+**UX Enhancements -**
 
  Sound effects for interactions (optional toggle)
  More animation variations and Easter eggs
