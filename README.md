@@ -45,6 +45,78 @@ A smooth, playful interactive website built with Next.js, React, and Framer Moti
 
 ---
 
+
+# 🧩 Folder Philosophy
+
+
+**The project is organized for clarity, scalability, and maintainability:**
+
+**Separation of Concerns –** UI, logic, and data are decoupled into focused layers (components, hooks, services).
+
+**Scalable Structure –** Designed to grow naturally as features expand (e.g., new pages, steps, or API routes).
+
+**Consistency & Reuse –** Shared logic is extracted into custom hooks and reusable UI components.
+
+**Readable Architecture –** Each folder name reflects its responsibility, reducing cognitive load for future contributors.
+
+**API Abstraction –** The services/ layer isolates data fetching, making it easy to migrate from static JSON to real APIs.
+
+**Type Safety –** All domain entities and enums are centralized under constants/ for predictable behavior and typing.
+
+
+---
+
+
+# 📁 Project Structure
+
+
+```bash
+src/
+├── app/
+│   ├── api/
+│   │   └── journey/
+│   │       └── route.ts                # API endpoint serving journey data
+│   ├── layouts/
+│   │   └── JourneyApp.tsx              # Main layout wrapper
+│   ├── components/
+│   │   ├── pages/                      # Top-level pages (entry points)
+│   │   │   ├── LandingPage.tsx
+│   │   │   └── SummaryPage.tsx
+│   │   ├── steps/                      # Step-by-step flow components
+│   │   │   ├── ChoiceStep.tsx
+│   │   │   └── JourneySteps.tsx
+│   │   └── ui/                         # Reusable UI elements and micro-interactions
+│   │       ├── BarsLoader.tsx
+│   │       ├── Confetti.tsx
+│   │       ├── ErrorMessage.tsx
+│   │       ├── ProgressIndicator.tsx
+│   │       └── ThemeToggle.tsx
+│   ├── data/
+│   │   └── journeyData.json            # Default static dataset
+│   ├── services/
+│   │   └── journey.ts                  # API / data-fetching abstraction layer
+│   ├── hooks/                          # Custom hooks for logic reusability
+│   │   ├── useConfettiEffect.ts
+│   │   ├── useHandleSelection.ts
+│   │   ├── useJourneyData.ts
+│   │   ├── useThemeBackground.ts
+│   │   └── useToggleTheme.ts
+│   ├── constants/
+│   │   ├── enums/
+│   │   │   └── index.ts
+│   │   ├── types/
+│   │   │   └── index.ts
+│   │   └── variants/
+│   │       └── variants.ts
+│   ├── favicon.ico
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+
+```
+
+---
+
 # Note
 
 This structure follows Next.js 14+ App Router conventions with:
@@ -156,102 +228,32 @@ Open http://localhost:3000 in your browser
 
 ```bash
 bash npm run build
-```
 
-```bash
 npm start
-```
-
----
-
-# 🧩 Folder Philosophy
-
-
-**The project is organized for clarity, scalability, and maintainability:**
-
-**Separation of Concerns –** UI, logic, and data are decoupled into focused layers (components, hooks, services).
-
-**Scalable Structure –** Designed to grow naturally as features expand (e.g., new pages, steps, or API routes).
-
-**Consistency & Reuse –** Shared logic is extracted into custom hooks and reusable UI components.
-
-**Readable Architecture –** Each folder name reflects its responsibility, reducing cognitive load for future contributors.
-
-**API Abstraction –** The services/ layer isolates data fetching, making it easy to migrate from static JSON to real APIs.
-
-**Type Safety –** All domain entities and enums are centralized under constants/ for predictable behavior and typing.
-
----
-
-# 📁 Project Structure
-
-```bash
-src/
-├── app/
-│   ├── api/
-│   │   └── journey/
-│   │       └── route.ts                # API endpoint serving journey data
-│   ├── layouts/
-│   │   └── JourneyApp.tsx              # Main layout wrapper
-│   ├── components/
-│   │   ├── pages/                      # Top-level pages (entry points)
-│   │   │   ├── LandingPage.tsx
-│   │   │   └── SummaryPage.tsx
-│   │   ├── steps/                      # Step-by-step flow components
-│   │   │   ├── ChoiceStep.tsx
-│   │   │   └── JourneySteps.tsx
-│   │   └── ui/                         # Reusable UI elements and micro-interactions
-│   │       ├── BarsLoader.tsx
-│   │       ├── Confetti.tsx
-│   │       ├── ErrorMessage.tsx
-│   │       ├── ProgressIndicator.tsx
-│   │       └── ThemeToggle.tsx
-│   ├── data/
-│   │   └── journeyData.json            # Default static dataset
-│   ├── services/
-│   │   └── journey.ts                  # API / data-fetching abstraction layer
-│   ├── hooks/                          # Custom hooks for logic reusability
-│   │   ├── useConfettiEffect.ts
-│   │   ├── useHandleSelection.ts
-│   │   ├── useJourneyData.ts
-│   │   ├── useThemeBackground.ts
-│   │   └── useToggleTheme.ts
-│   ├── constants/
-│   │   ├── enums/
-│   │   │   └── index.ts
-│   │   ├── types/
-│   │   │   └── index.ts
-│   │   └── variants/
-│   │       └── variants.ts
-│   ├── favicon.ico
-│   ├── globals.css
-│   ├── layout.tsx
-│   └── page.tsx
-
 ```
 
 ---
 
 # 🎨 Design Decisions
 
-**Architecture**
+**Architecture -**
 
 Component Composition: Separated concerns with focused, single-responsibility components
 Type Safety: Defined strict TypeScript interfaces for all data structures
 
-**Animation Strategy**
+**Animation Strategy -**
 
 Framer Motion Variants: Used for consistent, reusable animation patterns
 useMemo Optimization: Memoized complex animation objects to prevent unnecessary recalculations
 Staggered Children: Implemented sequential animations for better visual flow
 
-**Styling Approach**
+**Styling Approach -**
 
 Tailwind Utilities: Leveraged utility classes for rapid development
 Responsive Design: Mobile-first breakpoints (sm, md, lg, xl)
 Theme Variables: CSS custom properties for seamless dark/light mode transitions
 
-**SEO Implementation**
+**SEO Implementation -**
 
 Metadata API: Used Next.js 14 metadata objects for each route
 Dynamic Titles: Step-specific titles and descriptions
@@ -261,7 +263,7 @@ Open Graph: Social sharing optimization with preview images
 
 # 🚀 Deployment (Vercel)
 
-**Push code to GitHub**
+**Push code to GitHub -**
 
 bash git add .
 git commit -m "Initial commit"
