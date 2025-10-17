@@ -56,13 +56,18 @@ It emphasizes separation of concerns, type safety, and a clean layered structure
 
 # 🧩 Folder Structure Philosophy
 
-***Folder	Responsibility***
+***Folder Responsibility***
 
 **components -**	Contains all UI building blocks, divided into pages/, steps/, and ui/ for clarity.
+
 **hooks -**	Encapsulates state and logic for reuse and cleaner component trees.
+
 **services -**	Data abstraction layer — communicates with APIs or static files.
+
 **constants -**	Centralized enums, types, and variants for predictable behavior.
+
 **layouts -**	Defines app structure and global wrappers.
+
 **data -**	Stores local JSON (journeyData.json) — easily replaceable with API data.
 
 
