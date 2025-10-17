@@ -4,7 +4,6 @@ A smooth, playful interactive website built with Next.js, React, and Framer Moti
 
 ---
 
-
 > ⚠️ **Note regarding code submission**
 >
 > The version in the **`main`** branch represents the exact code submitted **before the assignment deadline**.
@@ -14,8 +13,8 @@ A smooth, playful interactive website built with Next.js, React, and Framer Moti
 > These updates include **refactoring, cleanup, and code organization only** —  
 > no new features, design changes were made.
 
-> # This version represents how I would have submitted the project if I had a bit more time to polish it.
-
+> **This version represents how I would have submitted the project if I had a bit more time to polish it.**
+>
 
 ---
 
@@ -114,25 +113,48 @@ npm start
 
 # 📁 Project Structure
 
+src/
 ├── app/
 │   ├── api/
 │   │   └── journey/
-│   │       └── route.ts          # API endpoint
-│   ├── layout.tsx                # Root layout with theme provider
-│   └── page.tsx                  # Landing page
-├── components/
-│   ├── JourneyApp.tsx            # Main journey flow
-│   ├── ChoiceStep.tsx            # Journey steps
-│   ├── ConfettiAnimation.tsx     # Celebration animation
-│   ├── ProgressIndicator.tsx     # Step counter
-│   ├── SummaryPage.tsx           # Summary page
-│   └── ThemeToggle.tsx           # Dark/light mode switch
-├── hooks/
-│   └── useJourneyData.ts         # Custom data fetching hook
-├── data/
-│   └── journey-data.json         # Static journey choices
-└── public/
-└── images/                   # Assets
+│   │       └── route.ts                # API endpoint serving journey data
+│   ├── layouts/
+│   │   └── JourneyApp.tsx              # Main layout wrapper
+│   ├── components/
+│   │   ├── pages/                      # Top-level pages
+│   │   │   ├── LandingPage.tsx
+│   │   │   └── SummaryPage.tsx
+│   │   ├── steps/                      # Step-by-step flow components
+│   │   │   ├── ChoiceStep.tsx
+│   │   │   └── JourneySteps.tsx
+│   │   └── ui/                         # Reusable UI components
+│   │       ├── BarsLoader.tsx
+│   │       ├── Confetti.tsx
+│   │       ├── ErrorMessage.tsx
+│   │       ├── ProgressIndicator.tsx
+│   │       └── ThemeToggle.tsx
+│   ├── data/
+│   │   └── journeyData.json            # Default static dataset
+│   ├── services/
+│   │   └── journey.ts                  # API / data-fetching abstraction
+│   ├── hooks/                          # Custom hooks
+│   │   ├── useConfettiEffect.ts
+│   │   ├── useHandleSelection.ts
+│   │   ├── useJourneyData.ts
+│   │   ├── useThemeBackground.ts
+│   │   └── useToggleTheme.ts
+│   ├── constants/
+│   │   ├── enums/
+│   │   │   └── index.ts
+│   │   ├── types/
+│   │   │   └── index.ts
+│   │   └── variants/
+│   │       └── variants.ts
+│   ├── favicon.ico
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+
 
 ---
 
