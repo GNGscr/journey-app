@@ -139,10 +139,10 @@ src/
 
 This structure follows Next.js 14+ App Router conventions with:
 
-Server components by default
-Client components marked with `'use client'`
-API routes in `app/api/`
-Clean separation between **UI**, **logic**, and **data layers**
+- Server components by default
+- Client components marked with `'use client'`
+- API routes in `app/api/`
+- Clean separation between **UI**, **logic**, and **data layers**
 
 ---
 
@@ -155,8 +155,8 @@ Clean separation between **UI**, **logic**, and **data layers**
 - Multi-Step Journey - Three interactive steps guiding user choices:
 
 **Choose Your Destination -**
-Pick Your Activity
-Select Your Guide
+- Pick Your Activity
+- Select Your Guide
 
 
 - Summary Page - Displays user selections with animated elements
@@ -251,26 +251,26 @@ npm start
 
 **Architecture -**
 
-Component Composition: Separated concerns with focused, single-responsibility components
-Type Safety: Defined strict TypeScript interfaces for all data structures
+- Component Composition: Separated concerns with focused, single-responsibility components
+- Type Safety: Defined strict TypeScript interfaces for all data structures
 
 **Animation Strategy -**
 
-Framer Motion Variants: Used for consistent, reusable animation patterns
-useMemo Optimization: Memoized complex animation objects to prevent unnecessary recalculations
-Staggered Children: Implemented sequential animations for better visual flow
+- Framer Motion Variants: Used for consistent, reusable animation patterns
+- useMemo Optimization: Memoized complex animation objects to prevent unnecessary recalculations
+- Staggered Children: Implemented sequential animations for better visual flow
 
 **Styling Approach -**
 
-Tailwind Utilities: Leveraged utility classes for rapid development
-Responsive Design: Mobile-first breakpoints (sm, md, lg, xl)
-Theme Variables: CSS custom properties for seamless dark/light mode transitions
+- Tailwind Utilities: Leveraged utility classes for rapid development
+- Responsive Design: Mobile-first breakpoints (sm, md, lg, xl)
+- Theme Variables: CSS custom properties for seamless dark/light mode transitions
 
 **SEO Implementation -**
 
-Metadata API: Used Next.js 14 metadata objects for each route
-Dynamic Titles: Step-specific titles and descriptions
-Open Graph: Social sharing optimization with preview images
+- Metadata API: Used Next.js 14 metadata objects for each route
+- Dynamic Titles: Step-specific titles and descriptions
+- Open Graph: Social sharing optimization with preview images
 
 ---
 
@@ -290,28 +290,28 @@ git push origin main
 
 **Features -**
 
- User authentication to save journey history
- Social sharing of completed journeys
- More journey themes (Adventure, Wellness, Learning)
- Journey templates and recommendations
- Analytics to track popular choices
+ - User authentication to save journey history
+ - Social sharing of completed journeys
+ - More journey themes (Adventure, Wellness, Learning)
+ - Journey templates and recommendations
+ - Analytics to track popular choices
 
 **Technical -**
 
- Add unit tests with jest
- Add E2E tests with Playwright
- Implement React Query for advanced data fetching
- Add Storybook for component documentation
- Performance monitoring with Vercel Analytics
- Accessibility audit and improvements (WCAG 2.1 AA)
+ - Add unit tests with jest
+ - Add E2E tests with Playwright
+ - Implement React Query for advanced data fetching
+ - Add Storybook for component documentation
+ - Performance monitoring with Vercel Analytics
+ - Accessibility audit and improvements (WCAG 2.1 AA)
 
 **UX Enhancements -**
 
- Sound effects for interactions (optional toggle)
- More animation variations and Easter eggs
- Journey export as shareable image/PDF
- Undo/back functionality between steps
- Keyboard navigation support
+ - Sound effects for interactions (optional toggle)
+ - More animation variations and Easter eggs
+ - Journey export as shareable image/PDF
+ - Undo/back functionality between steps
+ - Keyboard navigation support
 
  ---
 
