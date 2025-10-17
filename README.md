@@ -32,27 +32,27 @@ It emphasizes separation of concerns, type safety, and a clean layered structure
 
 **Modular Architecture —** each layer (UI, logic, data) has a dedicated responsibility.
 
-**Separation of Concerns —** presentation in components/, logic in hooks/, data in services/.
+**Separation of Concerns —** presentation in **`components/`**, logic in **`hooks/`**, data in **`services/`**.
 
 **Scalable Structure —** new pages, steps, or data sources can be added effortlessly.
 
-**Type Safety —** centralized enums, types, and motion variants under constants/.
+**Type Safety —** centralized `enums`, `types`, and motion `variants` under **`constants/.`**
 
-**Reusable Logic —** introduced custom hooks (useJourneyData, useHandleSelection, etc.) to reduce duplication.
+**Reusable Logic —** introduced custom hooks (`useJourneyData`, `useHandleSelection`, etc.) to reduce duplication.
 
-**Data Layer Abstraction —** services/journey.ts cleanly separates data access, ready for future API or DB integration.
+**Data Layer Abstraction —** `services/journey.ts` cleanly separates data access, ready for future API or DB integration.
 
-**Layout Separation —** layouts/JourneyApp.tsx defines the app shell and supports global providers or theming.
+**Layout Separation —** `layouts/JourneyApp.tsx` defines the app shell and supports global providers or theming.
 
-**Composable UI —** ui/ folder contains small, reusable visual components (e.g. BarsLoader, Confetti, ProgressIndicator).
+**Composable UI —** `ui/` folder contains small, reusable visual components (e.g. `BarsLoader`, `Confetti`, `ProgressIndicator`).
 
-**Dynamic Theming —** implemented light/dark mode toggle via useToggleTheme.
+**Dynamic Theming —** implemented **`light/dark`** mode toggle via useToggleTheme.
 
-**Error & Loading States —** added smooth user feedback with ErrorMessage and custom loader components.
+**Error & Loading States —** added smooth user feedback with `ErrorMessage` and custom loader components.
 
-**Animation Management —** centralized Framer Motion variants in variants/ for cleaner, consistent animation logic.
+**Animation Management —** centralized Framer Motion variants in **`variants/`** for cleaner, consistent animation logic.
 
-**Optimized Rendering —** unified repeated JSX blocks (destination/activity/guide) into a dynamic map structure.
+**Optimized Rendering —** unified repeated JSX blocks (`destination`/`activity`/`guide`) into a dynamic map structure.
 
 **Future-Ready —** easy to expand, migrate data sources, or enhance UX without breaking the architecture.
 
@@ -62,17 +62,17 @@ It emphasizes separation of concerns, type safety, and a clean layered structure
 
 ***Folder Responsibility***
 
-**components -**	Contains all UI building blocks, divided into pages/, steps/, and ui/ for clarity.
+**components -**	Contains all UI building blocks, divided into `pages/`, `steps/`, and `ui/` for clarity.
 
 **hooks -**	Encapsulates state and logic for reuse and cleaner component trees.
 
 **services -**	Data abstraction layer — communicates with APIs or static files.
 
-**constants -**	Centralized enums, types, and variants for predictable behavior.
+**constants -**	Centralized `enums`, `types`, and `variants` for predictable behavior.
 
 **layouts -**	Defines app structure and global wrappers.
 
-**data -**	Stores local JSON (journeyData.json) — easily replaceable with API data.
+**data -**	Stores local JSON (`journeyData.json`) — easily replaceable with API data.
 
 
 ---
@@ -134,7 +134,7 @@ This structure follows Next.js 14+ App Router conventions with:
 
 Server components by default
 Client components marked with 'use client'
-API routes in app/api/
+API routes in `app/api/`
 Clean separation between UI, logic, and data layers
 
 ---
