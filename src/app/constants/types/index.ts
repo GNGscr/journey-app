@@ -8,6 +8,11 @@ export type ErrorType = {
   error: string | 'Something went worng!';
 };
 
+export type ErrorMessageType = {
+  error: string;
+  theme: Theme;
+};
+
 // Interfaces
 
 export interface JourneyItem {

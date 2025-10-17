@@ -1,6 +1,6 @@
 import { motion, Variants } from "framer-motion";
-import { Theme } from "../types";
-import { Themes } from "../enums";
+import { Theme } from "../../constants/types";
+import { Themes } from "../../constants/enums";
 
 export default function BarsLoader({theme}: { theme: Theme }) {
   const { DARK } = Themes;

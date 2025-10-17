@@ -1,17 +1,17 @@
 "use client";
 import React, { useState } from "react";
 import { AnimatePresence } from "framer-motion";
-import { Theme, Selections } from "@/app/types";
+import { Theme, Selections } from "../constants/types";
 import useJourneyData from "../hooks/useJourneyData";
 import useThemeBackground from "../hooks/useThemeBackground";
 import useHandleSelection from "../hooks/useHandleSelection";
 import useConfettiEffect from "../hooks/useConfettiEffect";
-import JourneySteps from "../steps/JourneySteps";
-import { Themes } from "../enums";
-const ThemeToggle = React.lazy(() => import("../components/ThemeToggle"));
-const ProgressIndicator = React.lazy(() => import("../components/ProgressIndicator"));
-const BarsLoader = React.lazy(() => import("../components/BarsLoader"));
-const ErrorMessage = React.lazy(() => import("../components/ErrorMessage"));
+import JourneySteps from "../components/steps/JourneySteps";
+import { Themes } from "../constants/enums";
+const ThemeToggle = React.lazy(() => import("../components/ui/ThemeToggle"));
+const ProgressIndicator = React.lazy(() => import("../components/ui/ProgressIndicator"));
+const BarsLoader = React.lazy(() => import("../components/ui/BarsLoader"));
+const ErrorMessage = React.lazy(() => import("../components/ui/ErrorMessage"));
 
 export default function JourneyApp() {
 
@@ -50,7 +50,7 @@ export default function JourneyApp() {
   );
 
 if (isLoading) return <BarsLoader theme={theme} />;
-if (error) return <ErrorMessage error={error} />;
+if (error) return <ErrorMessage error={error} theme={theme} />;
 if (!journeyData) return null;
 
   return (

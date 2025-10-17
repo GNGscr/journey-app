@@ -1,9 +1,9 @@
 import React from "react";
 import { Plane, Compass, Users } from "lucide-react";
-const ChoiceStep = React.lazy(() => import("../components/ChoiceStep"));
-const LandingPage = React.lazy(() => import("../components/LandingPage"));
-const SummaryPage = React.lazy(() => import("../components/SummaryPage"));
-import { Theme, JourneyItem, Selections } from "@/app/types";
+const ChoiceStep = React.lazy(() => import("./ChoiceStep"));
+const LandingPage = React.lazy(() => import("../pages/LandingPage"));
+const SummaryPage = React.lazy(() => import("../pages/SummaryPage"));
+import { Theme, JourneyItem, Selections } from "../../constants/types";
 
 const JourneySteps = (
   journeyData: {

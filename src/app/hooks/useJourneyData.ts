@@ -1,10 +1,10 @@
 import { useEffect, useState, useCallback } from "react";
 import * as basicJourneyData from "@/app/data/journeyData.json";
-import { JourneyData } from "../types";
+import { JourneyData } from "../constants/types";
 
 const useJourneyData = ({ url }: { url: string }) => {
     const defaultJourneyData: JourneyData = basicJourneyData;
-    
+
     const [journeyData, setJourneyData] = useState<JourneyData>(defaultJourneyData);
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);

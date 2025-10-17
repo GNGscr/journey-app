@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { progressIndicatorVariant } from "../variants/variants";
-import { ProgressIndicatorProps } from "../types";
-import { Themes, Stpes } from "../enums";
+import { progressIndicatorVariant } from "../../constants/variants/variants";
+import { ProgressIndicatorProps } from "../../constants/types";
+import { Themes, Stpes } from "../../constants/enums";
 
 const ProgressIndicator: React.FC<ProgressIndicatorProps> = ({
   currentStep,
