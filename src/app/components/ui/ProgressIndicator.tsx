@@ -6,10 +6,11 @@ import { Themes, Stpes } from "../../constants/enums";
 const ProgressIndicator: React.FC<ProgressIndicatorProps> = ({
   currentStep,
   theme,
+  steps
 }) => {
   if (currentStep === 0 || currentStep >= 4) return null;
   const { DARK } = Themes;
-  const { STEP, OF_THREE } = Stpes;
+  const { STEP, OF } = Stpes;
 
   return (
     <div className="fixed top-6 left-6 z-40">
@@ -19,7 +20,7 @@ const ProgressIndicator: React.FC<ProgressIndicatorProps> = ({
           theme === DARK ? "bg-white/10" : "bg-black/10"
         } backdrop-blur-md`}
       >
-        <p className="text-sm font-medium">{STEP} {currentStep} {OF_THREE}</p>
+        <p className="text-sm font-medium">{STEP} {currentStep} {OF} {steps}</p>
       </motion.div>
     </div>
   );

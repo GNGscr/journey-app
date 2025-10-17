@@ -11,7 +11,7 @@ export enum Journey {
 export enum Stpes {
   STEP = "Step",
   CHOISES_STEP = "Choises Step",
-  OF_THREE = "of 3"
+  OF = "of"
 };
 export enum Summary {
   SUMMARY_PAGE = "Summary Page",

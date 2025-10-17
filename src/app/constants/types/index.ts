@@ -53,6 +53,7 @@ export interface ChoiceStepProps {
 export interface ProgressIndicatorProps {
   currentStep: number;
   theme: Theme;
+  steps: number;
 }
 
 export interface ProgressIndicatorProps {

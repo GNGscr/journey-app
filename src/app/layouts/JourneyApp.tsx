@@ -61,7 +61,7 @@ if (!journeyData) return null;
         theme={theme}
         onToggle={() => setTheme((prev) => (prev === DARK ? LIGHT : DARK))}
     />
-      <ProgressIndicator currentStep={currentStep} theme={theme} />
+      <ProgressIndicator currentStep={currentStep} theme={theme} steps={3} />
 
       <div className="container mx-auto px-4 py-8 min-h-screen flex items-center justify-center">
         <AnimatePresence mode="wait">
