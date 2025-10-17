@@ -10,8 +10,7 @@ A smooth, playful interactive website built with Next.js, React, and Framer Moti
 >
 > A separate branch, **`post-submission-refactor`**, was created **after submission** to improve structure and readability.
 >  
-> These updates include **refactoring, cleanup, and code organization only** —  
-> no new features, design changes were made.
+> These updates include **refactoring, cleanup, custom loader, error component and code organization** 
 
 > **💡 This version represents how I would have submitted the project if I had a bit more time to polish it.**
 >
