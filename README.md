@@ -13,7 +13,7 @@ A smooth, playful interactive website built with Next.js, React, and Framer Moti
 > These updates include **refactoring, cleanup, and code organization only** —  
 > no new features, design changes were made.
 
-> **This version represents how I would have submitted the project if I had a bit more time to polish it.**
+> **💡 This version represents how I would have submitted the project if I had a bit more time to polish it.**
 >
 
 ---
@@ -29,8 +29,10 @@ A smooth, playful interactive website built with Next.js, React, and Framer Moti
 - Error Handling - Graceful fallbacks
 - Loading States - User feedback during async operations
 
-```bash
-refactor(project-structure): reorganize folders into clear, modular architecture
+---
+
+**refactor(project-structure): reorganize folders into clear, modular architecture**
+
 
 - Moved main layout (JourneyApp) into layouts/ for cleaner separation of app shell.
 - Split components into domain-based folders:
@@ -41,9 +43,10 @@ refactor(project-structure): reorganize folders into clear, modular architecture
 - Grouped enums, types, and variants under constants/ for centralized definitions.
 - Improved project scalability and clarity by separating logic, UI, and data layers.
 
-```
+---
 
 # Note
+
 This structure follows Next.js 14+ App Router conventions with:
 
 Server components by default
@@ -53,16 +56,11 @@ Clean separation between UI, logic, and data layers
 
 ---
 
-# 🚀 Live Demo
-View Live Site (Replace with your actual Vercel URL)
-📋 Table of Contents
+## 📸 Preview
 
-Features
-Tech Stack
-Getting Started
-Project Structure
-Design Decisions
-Future Improvements
+**🚀 Live site:** [Journey App](https://journey-app-kappa.vercel.app/) 
+
+**📁 Code:** [GitHub Repository](journey-app)
 
 ---
 
@@ -72,7 +70,7 @@ Core Functionality
 Landing Page - Hero animation with engaging call-to-action
 Multi-Step Journey - Three interactive steps guiding user choices:
 
-# Choose Your Destination
+**Choose Your Destination**
 Pick Your Activity
 Select Your Guide
 
@@ -80,7 +78,7 @@ Select Your Guide
 Summary Page - Displays user selections with animated elements
 Journey Reset - Smooth restart functionality
 
-# Animations & Interactions
+**Animations & Interactions**
 
 Page Transitions - Smooth sliding/fading between steps using Framer Motion
 Element Entrances - Staggered animations for cards and content
@@ -88,7 +86,7 @@ Hover Effects - Interactive feedback on all clickable elements
 Progress Indicator - Visual step counter showing journey progress
 Surprise Animation - Confetti celebration on completion
 
-# Technical Features
+**Technical Features**
 
 SEO Optimized - Unique meta tags and Open Graph data for each page
 Responsive Design - Mobile-first approach with Tailwind CSS
@@ -107,42 +105,46 @@ Animations: Framer Motion
 State Management: React Hooks (useState, useMemo, custom hooks)
 Deployment: Vercel
 
-
 --- 
-
 
 # 🏃 Getting Started
 
-# Prerequisites
+**Prerequisites**
 
 Node.js 18+
 npm or yarn
 
-# Installation
+**Installation**
 
 Clone the repository
 
-bashgit clone https://github.com/yourusername/choose-your-journey.git
+```bash
+bash git clone https://github.com/yourusername/choose-your-journey.git
 cd choose-your-journey
+```
 
 ---
 
 # Install dependencies
 
-bashnpm install
+bash npm install
+
 **or**
+
 yarn install
 
 Run the development server
 
-bashnpm run dev
+bash npm run dev
+
 **or**
+
 yarn dev
 
 Open http://localhost:3000 in your browser
 
 # Build for Production
-bashnpm run build
+bash npm run build
 
 npm start
 
@@ -199,28 +201,30 @@ src/
 
 # 🎨 Design Decisions
 
-# Architecture
+**Architecture**
 
 Component Composition: Separated concerns with focused, single-responsibility components
 Type Safety: Defined strict TypeScript interfaces for all data structures
 
-# Animation Strategy
+**Animation Strategy**
 
 Framer Motion Variants: Used for consistent, reusable animation patterns
 useMemo Optimization: Memoized complex animation objects to prevent unnecessary recalculations
 Staggered Children: Implemented sequential animations for better visual flow
 
-# Styling Approach
+**Styling Approach**
 
 Tailwind Utilities: Leveraged utility classes for rapid development
 Responsive Design: Mobile-first breakpoints (sm, md, lg, xl)
 Theme Variables: CSS custom properties for seamless dark/light mode transitions
 
-# SEO Implementation
+**SEO Implementation**
 
 Metadata API: Used Next.js 14 metadata objects for each route
 Dynamic Titles: Step-specific titles and descriptions
 Open Graph: Social sharing optimization with preview images
+
+---
 
 # 🚀 Deployment (Vercel)
 
@@ -238,7 +242,7 @@ Your site will be live at https://your-project.vercel.app
 
 # 🔮 Future Improvements
 
-# Features
+**Features**
 
  User authentication to save journey history
  Social sharing of completed journeys
@@ -246,7 +250,7 @@ Your site will be live at https://your-project.vercel.app
  Journey templates and recommendations
  Analytics to track popular choices
 
-# Technical
+**Technical**
 
  Add E2E tests with Playwright
  Implement React Query for advanced data fetching
@@ -254,7 +258,7 @@ Your site will be live at https://your-project.vercel.app
  Performance monitoring with Vercel Analytics
  Accessibility audit and improvements (WCAG 2.1 AA)
 
-# UX Enhancements
+**UX Enhancements**
 
  Sound effects for interactions (optional toggle)
  More animation variations and Easter eggs
