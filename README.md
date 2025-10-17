@@ -21,40 +21,39 @@ A smooth, playful interactive website built with Next.js, React, and Framer Moti
 ---
 
 
-
 # Architecture Overview
 
 ***The project follows a modular and scalable architecture, designed for clarity, maintainability, and future growth.***
 
-It emphasizes separation of concerns, type safety, and a clean layered structure between UI, logic, and data.
+It emphasizes separation of concerns, type safety, and a clean layered structure between **UI**, **logic**, and **data**.
 
 # Key Features & Design Decisions
 
-**Modular Architecture —** each layer (UI, logic, data) has a dedicated responsibility.
+**Modular Architecture** - each layer (`UI`, `logic`, `data`) has a dedicated responsibility.
 
-**Separation of Concerns —** presentation in **`components/`**, logic in **`hooks/`**, data in **`services/`**.
+**Separation of Concerns** - presentation in **`components/`**, logic in **`hooks/`**, data in **`services/`**.
 
-**Scalable Structure —** new pages, steps, or data sources can be added effortlessly.
+**Scalable Structure** - new `pages`, `steps`, or `data sources` can be added effortlessly.
 
-**Type Safety —** centralized `enums`, `types`, and motion `variants` under **`constants/.`**
+**Type Safety** - centralized `enums`, `types`, and motion `variants` under **`constants/.`**
 
-**Reusable Logic —** introduced custom hooks (`useJourneyData`, `useHandleSelection`, etc.) to reduce duplication.
+**Reusable Logic** - introduced custom hooks (`useJourneyData`, `useHandleSelection`, etc.) to reduce duplication.
 
-**Data Layer Abstraction —** `services/journey.ts` cleanly separates data access, ready for future API or DB integration.
+**Data Layer Abstraction** - `services/journey.ts` cleanly separates data access, ready for future `API` or `DB integration`.
 
-**Layout Separation —** `layouts/JourneyApp.tsx` defines the app shell and supports global providers or theming.
+**Layout Separation** - `layouts/JourneyApp.tsx` defines the app shell and supports global providers or theming.
 
-**Composable UI —** `ui/` folder contains small, reusable visual components (e.g. `BarsLoader`, `Confetti`, `ProgressIndicator`).
+**Composable UI** - `ui/` folder contains small, reusable visual components (e.g. `BarsLoader`, `Confetti`, `ProgressIndicator`).
 
-**Dynamic Theming —** implemented **`light/dark`** mode toggle via useToggleTheme.
+**Dynamic Theming** - implemented **`light`** / **`dark`** mode toggle via `useToggleTheme`.
 
-**Error & Loading States —** added smooth user feedback with `ErrorMessage` and custom loader components.
+**Error & Loading States** - added smooth user feedback with `ErrorMessage` and custom loader components.
 
-**Animation Management —** centralized Framer Motion variants in **`variants/`** for cleaner, consistent animation logic.
+**Animation Management** - centralized Framer Motion variants in **`variants/`** for cleaner, consistent animation logic.
 
-**Optimized Rendering —** unified repeated JSX blocks (`destination`/`activity`/`guide`) into a dynamic map structure.
+**Optimized Rendering** - unified repeated **`JSX`** blocks (`destination`/`activity`/`guide`) into a dynamic map structure.
 
-**Future-Ready —** easy to expand, migrate data sources, or enhance UX without breaking the architecture.
+**Future-Ready** - easy to expand, migrate data sources, or enhance`UX` without breaking the architecture.
 
 ---
 
@@ -62,15 +61,15 @@ It emphasizes separation of concerns, type safety, and a clean layered structure
 
 ***Folder Responsibility***
 
-**components -**	Contains all UI building blocks, divided into `pages/`, `steps/`, and `ui/` for clarity.
+**components -** Contains all UI building blocks, divided into `pages/`, `steps/`, and `ui/` for clarity.
 
 **hooks -**	Encapsulates state and logic for reuse and cleaner component trees.
 
-**services -**	Data abstraction layer — communicates with APIs or static files.
+**services -**	`Data abstraction layer` — communicates with APIs or static files.
 
 **constants -**	Centralized `enums`, `types`, and `variants` for predictable behavior.
 
-**layouts -**	Defines app structure and global wrappers.
+**layouts -**	Defines `app` structure and `global` wrappers.
 
 **data -**	Stores local JSON (`journeyData.json`) — easily replaceable with API data.
 
@@ -79,7 +78,6 @@ It emphasizes separation of concerns, type safety, and a clean layered structure
 
 
 # Project Structure
-
 
 ```bash
 src/
@@ -128,16 +126,6 @@ src/
 
 ---
 
-# Note
-
-This structure follows Next.js 14+ App Router conventions with:
-
-Server components by default
-Client components marked with 'use client'
-API routes in `app/api/`
-Clean separation between UI, logic, and data layers
-
----
 
 ## Preview
 
@@ -147,48 +135,59 @@ Clean separation between UI, logic, and data layers
 
 ---
 
+# Note
+
+This structure follows Next.js 14+ App Router conventions with:
+
+Server components by default
+Client components marked with `'use client'`
+API routes in `app/api/`
+Clean separation between **UI**, **logic**, and **data layers**
+
+---
+
 # Features
 
 
 **Core Functionality -**
 
-Landing Page - Hero animation with engaging call-to-action
-Multi-Step Journey - Three interactive steps guiding user choices:
+- Landing Page - Hero animation with engaging call-to-action
+- Multi-Step Journey - Three interactive steps guiding user choices:
 
 **Choose Your Destination -**
 Pick Your Activity
 Select Your Guide
 
 
-Summary Page - Displays user selections with animated elements
-Journey Reset - Smooth restart functionality
+- Summary Page - Displays user selections with animated elements
+- Journey Reset - Smooth restart functionality
 
 **Animations & Interactions -**
 
-Page Transitions - Smooth sliding/fading between steps using Framer Motion
-Element Entrances - Staggered animations for cards and content
-Hover Effects - Interactive feedback on all clickable elements
-Progress Indicator - Visual step counter showing journey progress
-Surprise Animation - Confetti celebration on completion
+- Page Transitions - Smooth sliding/fading between steps using Framer Motion
+- Element Entrances - Staggered animations for cards and content
+- Hover Effects - Interactive feedback on all clickable elements
+- Progress Indicator - Visual step counter showing journey progress
+- Surprise Animation - Confetti celebration on completion
 
 **Technical Features -**
 
-SEO Optimized - Unique meta tags and Open Graph data for each page
-Responsive Design - Mobile-first approach with Tailwind CSS
-Dark/Light Theme - Animated theme toggle with persistent preference
-Clean Architecture - Custom hooks and reusable components
-Type Safety - Full TypeScript implementation
+- SEO Optimized - Unique meta tags and Open Graph data for each page
+- Responsive Design - Mobile-first approach with Tailwind CSS
+- Dark/Light Theme - Animated theme toggle with persistent preference
+- Clean Architecture - Custom hooks and reusable components
+- Type Safety - Full TypeScript implementation
 
 ----
 
 # Tech Stack
 
-Framework: Next.js 14+ (App Router)
-Language: TypeScript
-Styling: Tailwind CSS
-Animations: Framer Motion
-State Management: React Hooks (useState, useMemo, custom hooks)
-Deployment: Vercel
+**Framework:** Next.js 14+ (App Router)
+**Language:** TypeScript
+**Styling:** Tailwind CSS
+**Animations:** Framer Motion
+**State Management:** React Hooks (useState, useMemo, custom hooks)
+**Deployment:** Vercel
 
 --- 
 
@@ -234,7 +233,7 @@ bash npm run dev
 yarn dev
 ```
 
-Open http://localhost:3000 in your browser
+Open `http://localhost:3000` in your browser
 
 ---
 
