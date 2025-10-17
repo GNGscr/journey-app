@@ -15,55 +15,55 @@ A smooth, playful interactive website built with Next.js, React, and Framer Moti
 > **💡 This version represents how I would have submitted the project if I had a bit more time to polish it.**
 >
 
----
-
-# Architecture Key Features
-
-- Modular Architecture - Clean separation of concerns.
-- Type Safety - Full TypeScript coverage.
-- Custom Hooks - Reusable logic extraction.
-- API Layer - Abstracted data fetching.
-- Animations - Smooth Framer Motion transitions.
-- Theming - Dark/light mode support.
-- Error Handling - Graceful fallbacks.
-- Loading States - User feedback during async operations.
-- Optimization - Unified the rendering of 'selections' into a dynamic usage via map (instead of repeating same structure three times) - keeps readability, cleanness and flexibility for future component expension.
-- Support for future scaling - seperation of concerns, seperation of layers (API handler only connects between the services layer and the HTTP layer), can easily change db source (DB/API) without changing 'route.ts'.
-- Animation Variants - moved most framer-motion variants to specific folder to handle all in single place and also to present a cleaner jsx
-
----
-
-**refactor(project-structure): reorganize folders into clear, modular architecture**
-
-
-- Moved main layout (JourneyApp) into layouts/ for cleaner separation of app shell.
-- Split components into domain-based folders:
-  - pages/ for top-level screens (LandingPage, SummaryPage)
-  - steps/ for step-by-step flow logic (ChoiceStep, JourneySteps)
-  - ui/ for reusable visual components (Loader, Confetti, ProgressIndicator, etc.)
-- Added services/ layer for data handling and API abstraction (journey.ts)
-- Grouped enums, types, and variants under constants/ for centralized definitions.
-- Improved project scalability and clarity by separating logic, UI, and data layers.
 
 ---
 
 
-# 🧩 Folder Philosophy
 
+# 🧭 Architecture Overview
 
-**The project is organized for clarity, scalability, and maintainability:**
+***The project follows a modular and scalable architecture, designed for clarity, maintainability, and future growth.***
 
-**Separation of Concerns –** UI, logic, and data are decoupled into focused layers (components, hooks, services).
+It emphasizes separation of concerns, type safety, and a clean layered structure between UI, logic, and data.
 
-**Scalable Structure –** Designed to grow naturally as features expand (e.g., new pages, steps, or API routes).
+# ⚙️ Key Features & Design Decisions
 
-**Consistency & Reuse –** Shared logic is extracted into custom hooks and reusable UI components.
+**🧱 Modular Architecture —** each layer (UI, logic, data) has a dedicated responsibility.
 
-**Readable Architecture –** Each folder name reflects its responsibility, reducing cognitive load for future contributors.
+**📂 Separation of Concerns —** presentation in components/, logic in hooks/, data in services/.
 
-**API Abstraction –** The services/ layer isolates data fetching, making it easy to migrate from static JSON to real APIs.
+**🚀 Scalable Structure —** new pages, steps, or data sources can be added effortlessly.
 
-**Type Safety –** All domain entities and enums are centralized under constants/ for predictable behavior and typing.
+**🧩 Type Safety —** centralized enums, types, and motion variants under constants/.
+
+**♻️ Reusable Logic —** introduced custom hooks (useJourneyData, useHandleSelection, etc.) to reduce duplication.
+
+**🌐 Data Layer Abstraction —** services/journey.ts cleanly separates data access, ready for future API or DB integration.
+
+**🏗️ Layout Separation —** layouts/JourneyApp.tsx defines the app shell and supports global providers or theming.
+
+**🎨 Composable UI —** ui/ folder contains small, reusable visual components (e.g. BarsLoader, Confetti, ProgressIndicator).
+
+**🌗 Dynamic Theming —** implemented light/dark mode toggle via useToggleTheme.
+
+**⚠️ Error & Loading States —** added smooth user feedback with ErrorMessage and custom loader components.
+
+**🎬 Animation Management —** centralized Framer Motion variants in variants/ for cleaner, consistent animation logic.
+
+**🧠 Optimized Rendering —** unified repeated JSX blocks (destination/activity/guide) into a dynamic map structure.
+
+**🔮 Future-Ready —** easy to expand, migrate data sources, or enhance UX without breaking the architecture.
+
+# 🧩 Folder Structure Philosophy
+
+***Folder	Responsibility***
+
+**components -/**	Contains all UI building blocks, divided into pages/, steps/, and ui/ for clarity.
+**hooks -/**	Encapsulates state and logic for reuse and cleaner component trees.
+**services -/**	Data abstraction layer — communicates with APIs or static files.
+**constants -/**	Centralized enums, types, and variants for predictable behavior.
+**layouts -/**	Defines app structure and global wrappers.
+**data -/**	Stores local JSON (journeyData.json) — easily replaceable with API data.
 
 
 ---
@@ -140,6 +140,7 @@ Clean separation between UI, logic, and data layers
 
 # ✨ Features
 
+
 **Core Functionality -**
 
 Landing Page - Hero animation with engaging call-to-action
@@ -212,7 +213,7 @@ bash npm install
 yarn install
 ```
 
-Run the development server
+# Run the development server
 
 ```bash
 bash npm run dev
@@ -225,6 +226,8 @@ yarn dev
 ```
 
 Open http://localhost:3000 in your browser
+
+---
 
 # Build for Production
 
@@ -267,15 +270,11 @@ Open Graph: Social sharing optimization with preview images
 
 **Push code to GitHub -**
 
+```bash
 bash git add .
 git commit -m "Initial commit"
 git push origin main
-
-Visit vercel.com and sign in with GitHub
-Click "New Project" → "Import Git Repository"
-Select your repository and click "Import"
-Vercel will auto-detect Next.js settings - click "Deploy"
-Your site will be live at https://your-project.vercel.app
+```
 
 ---
 
@@ -291,6 +290,7 @@ Your site will be live at https://your-project.vercel.app
 
 **Technical -**
 
+ Add unit tests with jest
  Add E2E tests with Playwright
  Implement React Query for advanced data fetching
  Add Storybook for component documentation
@@ -305,12 +305,16 @@ Your site will be live at https://your-project.vercel.app
  Undo/back functionality between steps
  Keyboard navigation support
 
+ ---
+
 # 📝 License
 
 MIT
 
+---
+
 # 👤 Author
 
-Daniel Ehrlich - GitHub
+Daniel Ehrlich
 
-**Built with ❤️ for Appcharge Frontend Assignment**
+***Built with ❤️ for Appcharge Frontend Assignment***
