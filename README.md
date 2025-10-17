@@ -120,32 +120,43 @@ npm or yarn
 Clone the repository
 
 ```bash
-bash git clone https://github.com/yourusername/choose-your-journey.git
-cd choose-your-journey
+bash git clone https://github.com/GNGscr/journey-app.git
+cd journey-app
 ```
 
 ---
 
 # Install dependencies
 
+```bash
 bash npm install
+```
 
 **or**
 
+```bash
 yarn install
+```
 
 Run the development server
 
+```bash
 bash npm run dev
+```
 
 **or**
 
+```bash
 yarn dev
+```
 
 Open http://localhost:3000 in your browser
 
 # Build for Production
+
+```bash
 bash npm run build
+```
 
 ```bash
 npm start
