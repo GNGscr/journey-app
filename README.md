@@ -4,7 +4,6 @@ A smooth, playful interactive website built with Next.js, React, and Framer Moti
 
 ---
 
-
 > ⚠️ **Note regarding code submission**
 >
 > The version in the **`main`** branch represents the exact code submitted **before the assignment deadline**.
