@@ -247,9 +247,9 @@ Open Graph: Social sharing optimization with preview images
 
 # 🚀 Deployment (Vercel)
 
-Push code to GitHub
+**Push code to GitHub**
 
-bashgit add .
+bash git add .
 git commit -m "Initial commit"
 git push origin main
 
@@ -258,6 +258,8 @@ Click "New Project" → "Import Git Repository"
 Select your repository and click "Import"
 Vercel will auto-detect Next.js settings - click "Deploy"
 Your site will be live at https://your-project.vercel.app
+
+---
 
 # 🔮 Future Improvements
 
@@ -293,4 +295,4 @@ MIT
 
 Daniel Ehrlich - GitHub
 
-Built with ❤️ for Appcharge Frontend Assignment
+**Built with ❤️ for Appcharge Frontend Assignment**
