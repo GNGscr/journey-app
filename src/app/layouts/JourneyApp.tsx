@@ -8,7 +8,7 @@ import useHandleSelection from "../hooks/useHandleSelection";
 import useConfettiEffect from "../hooks/useConfettiEffect";
 import JourneySteps from "../components/steps/JourneySteps";
 import { Themes } from "../constants/enums";
-const ThemeToggle = React.lazy(() => import("../components/ui/ThemeToggle"));
+const ThemeToggleButton = React.lazy(() => import("../components/ui/ThemeToggleButton"));
 const ProgressIndicator = React.lazy(() => import("../components/ui/ProgressIndicator"));
 const BarsLoader = React.lazy(() => import("../components/ui/BarsLoader"));
 const ErrorMessage = React.lazy(() => import("../components/ui/ErrorMessage"));
@@ -57,7 +57,7 @@ if (!journeyData) return null;
     <div
       className={`min-h-screen transition-colors duration-500 ${themeBackground}`}
     >
-      <ThemeToggle
+      <ThemeToggleButton
         theme={theme}
         onToggle={() => setTheme((prev) => (prev === DARK ? LIGHT : DARK))}
     />

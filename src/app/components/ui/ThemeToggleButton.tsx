@@ -5,7 +5,7 @@ import { ThemeToggleProps } from "../../constants/types";
 import { Themes } from "../../constants/enums";
 const { DARK } = Themes;
 
-const ThemeToggle: React.FC<ThemeToggleProps> = ({ theme, onToggle }) => (
+const ThemeToggleButton: React.FC<ThemeToggleProps> = ({ theme, onToggle }) => (
   <motion.button
     onClick={onToggle}
     className={`fixed top-6 right-6 z-50 p-3 rounded-full ${
@@ -20,4 +20,4 @@ const ThemeToggle: React.FC<ThemeToggleProps> = ({ theme, onToggle }) => (
   </motion.button>
 );
 
-export default ThemeToggle;
+export default ThemeToggleButton;
