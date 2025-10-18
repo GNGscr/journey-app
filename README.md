@@ -53,7 +53,9 @@ It emphasizes separation of concerns, type safety, and a clean layered structure
 
 **Optimized Rendering** - unified repeated **`JSX`** blocks (`destination`/`activity`/`guide`) into a dynamic map structure.
 
-**Future-Ready** - easy to expand, migrate data sources, or enhance`UX` without breaking the architecture.
+**Fallback UI** - added Error Boundary to prevent page from crash and to provide a custom fallback component.
+
+**Future-Ready** - easy to expand, migrate data sources, or enhance `UX` without breaking the architecture.
 
 ---
 
@@ -117,6 +119,7 @@ src/
 │   │   │   └── index.ts
 │   │   └── variants/
 │   │       └── variants.ts
+│   ├── ErrorBoundary.js                # Error Boundary for UI fallback
 │   ├── favicon.ico
 │   ├── globals.css
 │   ├── layout.tsx
