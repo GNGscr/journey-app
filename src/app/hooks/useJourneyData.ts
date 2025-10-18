@@ -5,7 +5,7 @@ import { JourneyData } from "../constants/types";
 const useJourneyData = ({ url }: { url: string }) => {
     const defaultJourneyData: JourneyData = basicJourneyData;
 
-    const [journeyData, setJourneyData] = useState<JourneyData>();
+    const [journeyData, setJourneyData] = useState<JourneyData>(defaultJourneyData);
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
 
