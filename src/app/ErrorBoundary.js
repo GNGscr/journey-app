@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import ErrorMessage from "./components/ui/ErrorMessage";
-import { Themes } from "./constants/enums";
+import { Themes, ErrorMsg } from "./constants/enums";
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -18,9 +18,10 @@ class ErrorBoundary extends React.Component {
   render() {
     if (this.state.hasError) {
       return (
-        <div>
-          <ErrorMessage error={error} theme={Themes.DARK} />
+        <div className="flex items-center justify-center text-center">
+          <ErrorMessage error={ErrorMsg.message} theme={Themes.DARK} />
           <button
+            className="fixed border rounded-full bottom-35 py-2 px-10 text-2xl"
             type="button"
             onClick={() => this.setState({ hasError: false })}
           >

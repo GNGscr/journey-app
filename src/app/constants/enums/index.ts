@@ -18,3 +18,7 @@ export enum Summary {
   YOUR_JOURNEY_AWAITS = "Your Journey Awaits!",
   RESTART_JOURNEY = "Restart Journey"
 };
+
+export enum ErrorMsg {
+  message = "Something went wrong!"
+}
