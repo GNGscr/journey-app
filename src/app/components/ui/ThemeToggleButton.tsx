@@ -12,7 +12,7 @@ const ThemeToggleButton: React.FC<ThemeToggleProps> = ({ theme, onToggle }) => (
       theme === DARK
         ? "bg-yellow-400 text-gray-900"
         : "bg-indigo-600 text-white"
-    } shadow-lg`}
+    } shadow-lg cursor-pointer`}
     variants={themeToggleVariant}
     aria-label="Toggle theme"
   >

@@ -60,8 +60,9 @@ const LandingPage: React.FC<LandingPageProps> = ({ theme, onStart }) => {
         <motion.button
           variants={startJourneyVariant}
           onClick={onStart}
-          className={`px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full
-              text-white font-semibold text-lg shadow-2xl hover:shadow-purple-500/50 transition-shadow`}
+          className={`px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full cursor-pointer
+            text-white font-semibold text-lg shadow-2xl hover:shadow-purple-500/50 transition-shadow`}
+          aria-label="Start journey"
         >
           {START_YOUR_JOURNEY}
         </motion.button>

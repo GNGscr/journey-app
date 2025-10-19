@@ -98,7 +98,8 @@ const SummaryPage: React.FC<SummaryPageProps> = ({
             onClick={onRestart}
             className={`px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full
               text-white font-semibold text-lg shadow-2xl hover:shadow-blue-500/50 transition-shadow
-              inline-flex items-center gap-2`}
+              inline-flex items-center gap-2 cursor-pointer`}
+              aria-label="Restart journey"
           >
             <RotateCcw size={20} />
             {RESTART_JOURNEY}
