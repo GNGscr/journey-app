@@ -85,17 +85,16 @@ Currently this App is purely client side.
 
 To improve SEO, I would split each step into a different route,
 
-Example:  `/journey/[step]`
-
 and use the SSG that Next.js provides.
 
-This enable to define `generateMetadata` to each 'page',
+Example:  `/journey/[step]`
 
-so that the `title` and the `description` would be adjusted to the current step.
+- Enables to define `generateMetadata` to each 'page'
+- The `title` and `description` would be adjusted to the current step.
 
-* In case the data was `dynamic`, I would consider moving to SSR insead of SSG.
+> **In case the data was `dynamic`, I would consider moving to SSR insead of SSG.**
 
- 
+
 ***Starting by adding a Journey Folder to display Dynamic page that support SEO*** -
 
  ```bash
