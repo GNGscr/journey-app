@@ -81,11 +81,9 @@ It emphasizes separation of concerns, type safety, and a clean layered structure
 
 # Note - For Static Site Generation (SSG)
 
-Currently this App is purely client side.
+Currently this App is purely `client side`.
 
-To improve SEO, I would split each step into a different route,
-
-and use the SSG that Next.js provides.
+To improve SEO, I would split each step into a different route and use the SSG that Next.js provides.
 
 Example:  `/journey/[step]`
 
