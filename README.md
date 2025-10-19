@@ -79,6 +79,101 @@ It emphasizes separation of concerns, type safety, and a clean layered structure
 ---
 
 
+# Note - For Static Site Generation (SSG)
+
+Currently this App is purely client side.
+To improve SEO, I would split each step into a different route,
+Example:  `/journey/[step]`
+and use the SSG that Next.js provides.
+
+* This enable to define `generateMetadata` to each 'page',
+so that the `title` and the `description` would be adjusted to the current step.
+
+- In case the data was `dynamic`, I would consider moving to SSR insead of SSG.
+
+ 
+***Starting by adding a Journey Folder to display Dynamic page that support SEO*** -
+
+ ```bash
+    /journey/destination
+    /journey/activity
+    /journey/guide
+```
+
+***Folder structure*** - 
+
+```bash
+    journey/
+      [step]/   # destination/ activity/ guide
+        page.tsx
+```
+
+***Example Page*** -
+
+```bash
+
+import { Metadata } from "next";
+import journeyData from "@/app/data/journeyData.json";
+import ChoiceStep from "@/app/components/steps/ChoiceStep";
+import { Plane, Compass, Users } from "lucide-react";
+import { stepConfig } from "";
+
+const stepConfig = {
+  destination: {
+    title: "Choose Your Destination",
+    description: "Where will your adventure take you?",
+    icon: <Plane className="w-16 h-16 mx-auto mb-4 text-blue-400" />,
+    items: journeyData.destinations,
+  },
+  activity: {
+    title: "Pick Your Activity",
+    description: "What kind of experience are you seeking?",
+    icon: <Compass className="w-16 h-16 mx-auto mb-4 text-green-400" />,
+    items: journeyData.activities,
+  },
+  guide: {
+    title: "Select Your Guide",
+    description: "Who will accompany you on this journey?",
+    icon: <Users className="w-16 h-16 mx-auto mb-4 text-purple-400" />,
+    items: journeyData.guides,
+  },
+};
+
+# Will be added/ moved to a utils folder
+export async function generateStaticParams() {
+  return Object.keys(stepConfig).map((key) => ({ step: key }));
+}
+# Will be added to a utils folder
+export async function generateMetadata({ params }): Promise<Metadata> {
+  const step = stepConfig[params.step];
+  return {
+    title: step?.title || "Journey Step",
+    description: step?.description,
+  };
+}
+
+export default function StepPage({ params }) {
+  const step = stepConfig[params.step];
+  if (!step) return <div>Not found</div>;
+
+  return (
+    <ChoiceStep
+      title={step.title}
+      description={step.description}
+      icon={step.icon}
+      items={step.items}
+      theme="dark"
+      onSelect={() => {}}
+    />
+  );
+}
+
+```
+
+
+---
+
+
 # Project Structure
 
 ```bash
