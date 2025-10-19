@@ -79,6 +79,57 @@ It emphasizes separation of concerns, type safety, and a clean layered structure
 ---
 
 
+# Project Structure
+
+```bash
+src/
+├── app/
+│   ├── api/
+│   │   └── journey/
+│   │       └── route.ts                # API endpoint serving journey data
+│   ├── layouts/
+│   │   └── JourneyApp.tsx              # Main layout wrapper
+│   ├── components/
+│   │   ├── pages/                      # Top-level pages (entry points)
+│   │   │   ├── LandingPage.tsx
+│   │   │   └── SummaryPage.tsx
+│   │   ├── steps/                      # Step-by-step flow components
+│   │   │   ├── ChoiceStep.tsx
+│   │   │   └── JourneySteps.tsx
+│   │   └── ui/                         # Reusable UI elements and micro-interactions
+│   │       ├── BarsLoader.tsx
+│   │       ├── Confetti.tsx
+│   │       ├── ErrorMessage.tsx
+│   │       ├── ProgressIndicator.tsx
+│   │       └── ThemeToggle.tsx
+│   ├── data/
+│   │   └── journeyData.json            # Default static dataset
+│   ├── services/
+│   │   └── journey.ts                  # API / data-fetching abstraction layer
+│   ├── hooks/                          # Custom hooks for logic reusability
+│   │   ├── useConfettiEffect.ts
+│   │   ├── useHandleSelection.ts
+│   │   ├── useJourneyData.ts
+│   │   ├── useThemeBackground.ts
+│   │   └── useToggleTheme.ts
+│   ├── constants/
+│   │   ├── enums/
+│   │   │   └── index.ts
+│   │   ├── types/
+│   │   │   └── index.ts
+│   │   └── variants/
+│   │       └── variants.ts
+│   ├── ErrorBoundary.js                # Error Boundary for UI fallback
+│   ├── favicon.ico
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+
+```
+
+---
+
+
 # Note - For Static Site Generation (SSG)
 
 Currently this App is purely `client side`.
@@ -168,58 +219,6 @@ export default function StepPage({ params }) {
     />
   );
 }
-
-```
-
-
----
-
-
-# Project Structure
-
-```bash
-src/
-├── app/
-│   ├── api/
-│   │   └── journey/
-│   │       └── route.ts                # API endpoint serving journey data
-│   ├── layouts/
-│   │   └── JourneyApp.tsx              # Main layout wrapper
-│   ├── components/
-│   │   ├── pages/                      # Top-level pages (entry points)
-│   │   │   ├── LandingPage.tsx
-│   │   │   └── SummaryPage.tsx
-│   │   ├── steps/                      # Step-by-step flow components
-│   │   │   ├── ChoiceStep.tsx
-│   │   │   └── JourneySteps.tsx
-│   │   └── ui/                         # Reusable UI elements and micro-interactions
-│   │       ├── BarsLoader.tsx
-│   │       ├── Confetti.tsx
-│   │       ├── ErrorMessage.tsx
-│   │       ├── ProgressIndicator.tsx
-│   │       └── ThemeToggle.tsx
-│   ├── data/
-│   │   └── journeyData.json            # Default static dataset
-│   ├── services/
-│   │   └── journey.ts                  # API / data-fetching abstraction layer
-│   ├── hooks/                          # Custom hooks for logic reusability
-│   │   ├── useConfettiEffect.ts
-│   │   ├── useHandleSelection.ts
-│   │   ├── useJourneyData.ts
-│   │   ├── useThemeBackground.ts
-│   │   └── useToggleTheme.ts
-│   ├── constants/
-│   │   ├── enums/
-│   │   │   └── index.ts
-│   │   ├── types/
-│   │   │   └── index.ts
-│   │   └── variants/
-│   │       └── variants.ts
-│   ├── ErrorBoundary.js                # Error Boundary for UI fallback
-│   ├── favicon.ico
-│   ├── globals.css
-│   ├── layout.tsx
-│   └── page.tsx
 
 ```
 
