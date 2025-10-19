@@ -168,8 +168,8 @@ import { Metadata } from "next";
 import journeyData from "@/app/data/journeyData.json";
 import ChoiceStep from "@/app/components/steps/ChoiceStep";
 import { Plane, Compass, Users } from "lucide-react";
-import { stepConfig } from "";
 
+# Will be moved to constants folder
 const stepConfig = {
   destination: {
     title: "Choose Your Destination",
