@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useState, useCallback } from "react";
 import * as basicJourneyData from "@/app/data/journeyData.json";
 import { JourneyData } from "../constants/types";

@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { Plane, Compass, Users } from "lucide-react";
 const ChoiceStep = React.lazy(() => import("./ChoiceStep"));

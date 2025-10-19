@@ -1,3 +1,4 @@
+"use client";
 import { motion } from "framer-motion";
 import { errorVariant } from "../../constants/variants/variants";
 import { ErrorMessageType } from "../../constants/types";

@@ -1,3 +1,4 @@
+"use client";
 import { Themes } from "../constants/enums";
 const { DARK } = Themes;
 

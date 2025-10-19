@@ -1,3 +1,4 @@
+"use client";
 import { motion } from "framer-motion";
 import { Sun, Moon } from "lucide-react";
 import { themeToggleVariant } from "../../constants/variants/variants";

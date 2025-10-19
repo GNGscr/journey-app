@@ -1,3 +1,4 @@
+"use client";
 import { motion, Variants } from "framer-motion";
 import { Theme } from "../../constants/types";
 import { Themes } from "../../constants/enums";
