@@ -4,6 +4,7 @@ const ChoiceStep = React.lazy(() => import("./ChoiceStep"));
 const LandingPage = React.lazy(() => import("../pages/LandingPage"));
 const SummaryPage = React.lazy(() => import("../pages/SummaryPage"));
 import { Theme, JourneyItem, Selections } from "../../constants/types";
+import { stepSeoMeta } from "../../constants/seoMeta/seoMeta";
 
 const JourneySteps = (
   journeyData: {
@@ -32,8 +33,8 @@ const JourneySteps = (
       key: "destination",
       component: (
         <ChoiceStep
-          title="Choose Your Destination"
-          description="Where will your adventure take you?"
+          title={stepSeoMeta?.destination?.title}
+          description={stepSeoMeta?.destination?.description}
           icon={<Plane className="w-16 h-16 mx-auto mb-4 text-blue-400" />}
           items={journeyData.destinations}
           theme={theme}
@@ -45,8 +46,8 @@ const JourneySteps = (
       key: "activity",
       component: (
         <ChoiceStep
-          title="Pick Your Activity"
-          description="What kind of experience are you seeking?"
+          title={stepSeoMeta?.activity?.title}
+          description={stepSeoMeta?.activity?.description}
           icon={<Compass className="w-16 h-16 mx-auto mb-4 text-green-400" />}
           items={journeyData.activities}
           theme={theme}
@@ -58,8 +59,8 @@ const JourneySteps = (
       key: "guide",
       component: (
         <ChoiceStep
-          title="Select Your Guide"
-          description="Who will accompany you on this journey?"
+          title={stepSeoMeta?.guide?.title}
+          description={stepSeoMeta?.guide?.description}
           icon={<Users className="w-16 h-16 mx-auto mb-4 text-purple-400" />}
           items={journeyData.guides}
           theme={theme}

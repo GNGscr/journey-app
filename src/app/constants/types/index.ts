@@ -13,6 +13,14 @@ export type ErrorMessageType = {
   theme: Theme;
 };
 
+export type StepKey = "landing" | "destination" | "activity" | "guide" | "summary";
+
+
+export type SeoMetaProps = {
+  title?: string;
+  description?: string;
+};
+
 // Interfaces
 
 export interface JourneyItem {

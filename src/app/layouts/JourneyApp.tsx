@@ -8,10 +8,13 @@ import useHandleSelection from "../hooks/useHandleSelection";
 import useConfettiEffect from "../hooks/useConfettiEffect";
 import JourneySteps from "../components/steps/JourneySteps";
 import { Themes } from "../constants/enums";
+import { StepKey } from "../constants/types";
+import { stepSeoMeta } from "../constants/seoMeta/seoMeta";
 const ThemeToggleButton = React.lazy(() => import("../components/ui/ThemeToggleButton"));
 const ProgressIndicator = React.lazy(() => import("../components/ui/ProgressIndicator"));
 const BarsLoader = React.lazy(() => import("../components/ui/BarsLoader"));
 const ErrorMessage = React.lazy(() => import("../components/ui/ErrorMessage"));
+const SeoMeta = React.lazy(() => import("../components/ui/SeoMeta"));
 
 export default function JourneyApp() {
 
@@ -22,6 +25,9 @@ export default function JourneyApp() {
   const [currentStep, setCurrentStep] = useState<number>(0);
   const [selections, setSelections] = useState<Selections>(nullSelections);
   const [showConfetti, setShowConfetti] = useState<boolean>(false);
+  const stepKeys: StepKey[] = ["landing", "destination", "activity", "guide", "summary"];
+  const currentStepKey = stepKeys[currentStep];
+  const seo = stepSeoMeta[currentStepKey];
 
   const { journeyData, isLoading, error } = useJourneyData({
     url: "/api/journey",
@@ -57,6 +63,7 @@ if (!journeyData) return null;
     <div
       className={`min-h-screen transition-colors duration-500 ${themeBackground}`}
     >
+      <SeoMeta title={seo?.title} description={seo?.description} />
       <ThemeToggleButton
         theme={theme}
         onToggle={() => setTheme((prev) => (prev === DARK ? LIGHT : DARK))}
