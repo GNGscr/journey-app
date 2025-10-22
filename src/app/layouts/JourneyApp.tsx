@@ -8,11 +8,11 @@ import useHandleSelection from "../hooks/useHandleSelection";
 import useConfettiEffect from "../hooks/useConfettiEffect";
 import JourneySteps from "../components/steps/JourneySteps";
 import { Themes } from "../constants/enums";
-import SEOHead from "../components/metadata/SEOHead";
 const ThemeToggleButton = React.lazy(() => import("../components/ui/ThemeToggleButton"));
 const ProgressIndicator = React.lazy(() => import("../components/ui/ProgressIndicator"));
 const BarsLoader = React.lazy(() => import("../components/ui/BarsLoader"));
 const ErrorMessage = React.lazy(() => import("../components/ui/ErrorMessage"));
+const SEOHead = React.lazy(() => import("../components/ui/SEOHead"));
 
 export default function JourneyApp() {
 
