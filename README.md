@@ -200,7 +200,7 @@ src/
 │  └─ shared.json               # Data - shared data between stages
 │
 └─ types/
-   └─ index.ts                  # Definition TypeScript (JourneyStep, Choice וכו’)
+   └─ index.ts                  # Definition TypeScript (JourneyStep, Choice, etc..’)
 
 
 ```
