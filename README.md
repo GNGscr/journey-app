@@ -205,6 +205,18 @@ src/
 
 ```
 
+  ***Optional Dynamic Routing*** - Handling different steps 
+  
+  Each Step will be dynamic (for smaller file structure)
+
+```bash
+
+│  ├─ journey/
+│  │  ├─ [step]/                # all steps metadata can be imported from a single file
+│  │  │  └─ page.tsx            # Using Params to get current step         
+
+```
+
 ---
 
 
