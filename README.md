@@ -148,59 +148,59 @@ src/
 ├─ app/
 │  ├─ layout.tsx
 │  ├─ globals.css
-│  ├─ page.tsx                  → Landing Page (Hero, CTA)
+│  ├─ page.tsx                  # Landing Page (Hero, CTA)
 │  │
 │  ├─ journey/
-│  │  ├─ layout.tsx             → Layout - used on all stages (ProgressBar, ThemeToggle)
-│  │  ├─ page.tsx               → Redirect to - /journey/step-1 or overview
+│  │  ├─ layout.tsx             # Layout - used on all stages (ProgressBar, ThemeToggle)
+│  │  ├─ page.tsx               # Redirect to - /journey/step-1 or overview
 │  │  │
 │  │  ├─ step-1/
-│  │  │  ├─ page.tsx            → Choose Destination
-│  │  │  ├─ metadata.ts         → Title / Description
-│  │  │  └─ data.json           → List of available timelines
+│  │  │  ├─ page.tsx            # Choose Destination
+│  │  │  ├─ metadata.ts         # Title / Description
+│  │  │  └─ data.json           # List of available timelines
 │  │  │
 │  │  ├─ step-2/
-│  │  │  ├─ page.tsx            → Pick Activity
+│  │  │  ├─ page.tsx            # Pick Activity
 │  │  │  ├─ metadata.ts
 │  │  │  └─ data.json
 │  │  │
 │  │  ├─ step-3/
-│  │  │  ├─ page.tsx            → Select Guide
+│  │  │  ├─ page.tsx            # Select Guide
 │  │  │  ├─ metadata.ts
 │  │  │  └─ data.json
 │  │  │
 │  │  └─ summary/
-│  │     ├─ page.tsx            → Summary Page
+│  │     ├─ page.tsx            # Summary Page
 │  │     ├─ metadata.ts
 │  │     └─ components/
 │  │         └─ Confetti.tsx
 │  │
-│  └─ api/                      → Optional future API endpoint
+│  └─ api/                      # Optional future API endpoint
 │
 ├─ components/
-│  ├─ ui/                       → Generic components (Button, Card, ProgressBar, ThemeToggle)
-│  ├─ layout/                   → Layout components (Navbar, Footer, StepLayout)
-│  ├─ animations/               → Components using motion/framer presets
-│  └─ journey/                  → UI components used within steps (StepHeader, ChoiceGrid, etc..)
+│  ├─ ui/                       # Generic components (Button, Card, ProgressBar, ThemeToggle)
+│  ├─ layout/                   # Layout components (Navbar, Footer, StepLayout)
+│  ├─ animations/               # Components using motion/framer presets
+│  └─ journey/                  # UI components used within steps (StepHeader, ChoiceGrid, etc..)
 │
 ├─ hooks/
-│  ├─ useJourneyData.ts         → Managing the user choises
+│  ├─ useJourneyData.ts         # Managing the user choises
 │  ├─ useTheme.ts
 │  └─ useProgress.ts
 │
 ├─ lib/
-│  ├─ metadata.ts               → Functions to handle SEO metadata
-│  ├─ ssg.ts                    → Utilities of generateStaticParams, etc..
-│  └─ animations.ts             → Common Motion variants definitions
+│  ├─ metadata.ts               # Functions to handle SEO metadata
+│  ├─ ssg.ts                    # Utilities of generateStaticParams, etc..
+│  └─ animations.ts             # Common Motion variants definitions
 │
 ├─ context/
-│  └─ JourneyContext.tsx        → Global state with Context API (keeping track of choises)
+│  └─ JourneyContext.tsx        # Global state with Context API (keeping track of choises)
 │
 ├─ data/
-│  └─ shared.json               → Data - shared data between stages
+│  └─ shared.json               # Data - shared data between stages
 │
 └─ types/
-   └─ index.ts                  → Definitions to TypeScript (JourneyStep, Choice, etc..)
+   └─ index.ts                  # Definitions to TypeScript (JourneyStep, Choice, etc..)
 
 
 ```
