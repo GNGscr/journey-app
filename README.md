@@ -184,7 +184,7 @@ src/
 │  └─ journey/                  → UI components used in steps (StepHeader, ChoiceGrid, etc..’)
 │
 ├─ hooks/
-│  ├─ useJourneyData.ts         → Managing user's choises
+│  ├─ useJourneyData.ts         → Managing the user choises
 │  ├─ useTheme.ts
 │  └─ useProgress.ts
 │
@@ -194,13 +194,13 @@ src/
 │  └─ animations.ts             → Common Motion variants definitions
 │
 ├─ context/
-│  └─ JourneyContext.tsx        → Global state עם Context API (למעקב אחרי בחירות)
+│  └─ JourneyContext.tsx        → Global state with Context API (to keep track of choises)
 │
 ├─ data/
-│  └─ shared.json               → Data ששותף בין השלבים
+│  └─ shared.json               → Data - shared data between stages
 │
 └─ types/
-   └─ index.ts                  → הגדרות TypeScript (JourneyStep, Choice וכו’)
+   └─ index.ts                  → Definitions for TypeScript (JourneyStep, Choice, etc..’)
 
 
 ```
