@@ -207,7 +207,7 @@ src/
 
 # Optional Dynamic Routing - (Handling different steps) 
   
-  ***Each Step will be dynamic (for smaller file structure)***
+  ***Each Step will be dynamic (for smaller folder structure)***
 
 ```bash
 
