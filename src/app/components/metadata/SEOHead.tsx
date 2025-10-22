@@ -1,7 +1,7 @@
 'use client';
 import { useEffect } from "react";
-import { SEOHeadProps } from "../constants/types";
-import { stepMetadata } from "../helpers/stepMetadata";
+import { SEOHeadProps } from "../../constants/types";
+import { stepMetadata } from "../../helpers/stepMetadata";
 
 const SEOHead: React.FC<SEOHeadProps> = ({ step }) => {
   const meta = stepMetadata[step];
@@ -38,11 +38,6 @@ const SEOHead: React.FC<SEOHeadProps> = ({ step }) => {
     updateMetaTag('og:title', meta.title, 'og:title');
     updateMetaTag('og:description', meta.description, 'og:description');
     updateMetaTag('og:type', 'website', 'og:type');
-
-    // Optional Twitter Card
-    // updateMetaTag('twitter:card', 'summary_large_image');
-    // updateMetaTag('twitter:title', meta.title);
-    // updateMetaTag('twitter:description', meta.description);
 
   }, [step, meta]);
 

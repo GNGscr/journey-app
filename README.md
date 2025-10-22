@@ -90,6 +90,8 @@ src/
 │   ├── layouts/
 │   │   └── JourneyApp.tsx              # Main layout wrapper
 │   ├── components/
+│   │   ├── metadata/                   # SEO Optimized - Unique metadata for each step
+│   │   │   ├── SEOHead.tsx
 │   │   ├── pages/                      # Top-level pages (entry points)
 │   │   │   ├── LandingPage.tsx
 │   │   │   └── SummaryPage.tsx
@@ -124,101 +126,6 @@ src/
 │   ├── globals.css
 │   ├── layout.tsx
 │   └── page.tsx
-
-```
-
----
-
-
-# Note - For Static Site Generation (SSG)
-
-Currently this App is purely `client side`.
-
-To improve SEO, I would split each step into a different route and use the SSG that Next.js provides.
-
-Example:  `/journey/[step]`
-
-- Enables to define `generateMetadata` to each 'page'
-- The `title` and `description` would be adjusted to the current step.
-
-> **In case the data was `dynamic`, I would consider moving to SSR insead of SSG.**
-
-
-***Starting by adding a Journey Folder to display Dynamic page that support SEO*** -
-
- ```bash
-    /journey/destination
-    /journey/activity
-    /journey/guide
-```
-
-***Folder structure*** - 
-
-```bash
-    journey/
-      [step]/   # destination/ activity/ guide
-        page.tsx
-```
-
-***Example Page*** -
-
-```bash
-
-import { Metadata } from "next";
-import journeyData from "@/app/data/journeyData.json";
-import ChoiceStep from "@/app/components/steps/ChoiceStep";
-import { Plane, Compass, Users } from "lucide-react";
-
-# Will be moved to constants folder
-const stepConfig = {
-  destination: {
-    title: "Choose Your Destination",
-    description: "Where will your adventure take you?",
-    icon: <Plane className="w-16 h-16 mx-auto mb-4 text-blue-400" />,
-    items: journeyData.destinations,
-  },
-  activity: {
-    title: "Pick Your Activity",
-    description: "What kind of experience are you seeking?",
-    icon: <Compass className="w-16 h-16 mx-auto mb-4 text-green-400" />,
-    items: journeyData.activities,
-  },
-  guide: {
-    title: "Select Your Guide",
-    description: "Who will accompany you on this journey?",
-    icon: <Users className="w-16 h-16 mx-auto mb-4 text-purple-400" />,
-    items: journeyData.guides,
-  },
-};
-
-# Will be added/ moved to a utils folder
-export async function generateStaticParams() {
-  return Object.keys(stepConfig).map((key) => ({ step: key }));
-}
-# Will be added to a utils folder
-export async function generateMetadata({ params }): Promise<Metadata> {
-  const step = stepConfig[params.step];
-  return {
-    title: step?.title || "Journey Step",
-    description: step?.description,
-  };
-}
-
-export default function StepPage({ params }) {
-  const step = stepConfig[params.step];
-  if (!step) return <div>Not found</div>;
-
-  return (
-    <ChoiceStep
-      title={step.title}
-      description={step.description}
-      icon={step.icon}
-      items={step.items}
-      theme="dark"
-      onSelect={() => {}}
-    />
-  );
-}
 
 ```
 
@@ -364,11 +271,10 @@ npm start
 - Responsive Design: Mobile-first breakpoints (sm, md, lg, xl)
 - Theme Variables: CSS custom properties for seamless dark/light mode transitions
 
-**SEO Implementation -**
+**SEO Optimized - Unique metadata for each step -**
 
-- Metadata API: Used Next.js 14 metadata objects for each route
-- Dynamic Titles: Step-specific titles and descriptions
-- Open Graph: Social sharing optimization with preview images
+- Each step have a unique title and meta description.
+- Added Open Graph tags for sharing (title, description, preview image).
 
 ---
 
