@@ -157,7 +157,7 @@ src/
 │  │  ├─ step-1/
 │  │  │  ├─ page.tsx            → Choose Destination
 │  │  │  ├─ metadata.ts         → Title / Description
-│  │  │  └─ data.json           → List of available times
+│  │  │  └─ data.json           → List of available timelines
 │  │  │
 │  │  ├─ step-2/
 │  │  │  ├─ page.tsx            → Pick Activity
@@ -181,7 +181,7 @@ src/
 │  ├─ ui/                       → Generic components (Button, Card, ProgressBar, ThemeToggle)
 │  ├─ layout/                   → Layout components (Navbar, Footer, StepLayout)
 │  ├─ animations/               → Components using motion/framer presets
-│  └─ journey/                  → UI components used in steps (StepHeader, ChoiceGrid, etc..)
+│  └─ journey/                  → UI components used within steps (StepHeader, ChoiceGrid, etc..)
 │
 ├─ hooks/
 │  ├─ useJourneyData.ts         → Managing the user choises
