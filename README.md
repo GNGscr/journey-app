@@ -90,7 +90,7 @@ src/
 │   ├── layouts/
 │   │   └── JourneyApp.tsx              # Main layout wrapper
 │   ├── components/
-│   │   ├── metadata/                   # SEO Optimized - Unique metadata for each step
+│   │   ├── metadata/                   # SEO Optimized component utilizing stepMetadata
 │   │   │   ├── SEOHead.tsx
 │   │   ├── pages/                      # Top-level pages (entry points)
 │   │   │   ├── LandingPage.tsx
@@ -104,6 +104,8 @@ src/
 │   │       ├── ErrorMessage.tsx
 │   │       ├── ProgressIndicator.tsx
 │   │       └── ThemeToggle.tsx
+│   ├── helpers/
+│   │   └── stepMetadata.tsx            # Unique metadata for each step
 │   ├── data/
 │   │   └── journeyData.json            # Default static dataset
 │   ├── services/
