@@ -157,7 +157,7 @@ src/
 │  │  ├─ step-1/
 │  │  │  ├─ page.tsx            # Choose Destination
 │  │  │  ├─ metadata.ts         # Title / Description
-│  │  │  └─ data.json           # List of available timelines
+│  │  │  └─ data.json           # List of available times
 │  │  │
 │  │  ├─ step-2/
 │  │  │  ├─ page.tsx            # Pick Activity
@@ -181,26 +181,26 @@ src/
 │  ├─ ui/                       # Generic components (Button, Card, ProgressBar, ThemeToggle)
 │  ├─ layout/                   # Layout components (Navbar, Footer, StepLayout)
 │  ├─ animations/               # Components using motion/framer presets
-│  └─ journey/                  # UI components used within steps (StepHeader, ChoiceGrid, etc..)
+│  └─ journey/                  # UI components used in steps (StepHeader, ChoiceGrid, etc..’)
 │
 ├─ hooks/
-│  ├─ useJourneyData.ts         # Managing the user choises
+│  ├─ useJourneyData.ts         # Managing user's choises
 │  ├─ useTheme.ts
 │  └─ useProgress.ts
 │
 ├─ lib/
-│  ├─ metadata.ts               # Functions to handle SEO metadata
-│  ├─ ssg.ts                    # Utilities of generateStaticParams, etc..
+│  ├─ metadata.ts               # Functions for handling SEO metadata
+│  ├─ ssg.ts                    # Utilities for generateStaticParams, etc..’
 │  └─ animations.ts             # Common Motion variants definitions
 │
 ├─ context/
-│  └─ JourneyContext.tsx        # Global state with Context API (keeping track of choises)
+│  └─ JourneyContext.tsx        # Global state with Context API (to keep track of choises)
 │
 ├─ data/
 │  └─ shared.json               # Data - shared data between stages
 │
 └─ types/
-   └─ index.ts                  # Definitions to TypeScript (JourneyStep, Choice, etc..)
+   └─ index.ts                  # Definition TypeScript (JourneyStep, Choice וכו’)
 
 
 ```
