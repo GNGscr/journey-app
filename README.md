@@ -133,6 +133,81 @@ src/
 ---
 
 
+# Optional Project Structure (SEO & Pages)
+
+***Every Step will be a seperate page (SSG)**
+
+Each `/journey/step-x/page.tsx` is built in advance with `generateStaticParams()`.
+
+- `app/` folder will manage all the routes routes,
+- `components/` folder will manage the the`UI` component and animations. 
+
+```bash
+
+src/
+├─ app/
+│  ├─ layout.tsx
+│  ├─ globals.css
+│  ├─ page.tsx                  → Landing Page (Hero, CTA)
+│  │
+│  ├─ journey/
+│  │  ├─ layout.tsx             → Layout - used on all stages (ProgressBar, ThemeToggle)
+│  │  ├─ page.tsx               → Redirect to - /journey/step-1 or overview
+│  │  │
+│  │  ├─ step-1/
+│  │  │  ├─ page.tsx            → Choose Destination
+│  │  │  ├─ metadata.ts         → Title / Description
+│  │  │  └─ data.json           → List of available times
+│  │  │
+│  │  ├─ step-2/
+│  │  │  ├─ page.tsx            → Pick Activity
+│  │  │  ├─ metadata.ts
+│  │  │  └─ data.json
+│  │  │
+│  │  ├─ step-3/
+│  │  │  ├─ page.tsx            → Select Guide
+│  │  │  ├─ metadata.ts
+│  │  │  └─ data.json
+│  │  │
+│  │  └─ summary/
+│  │     ├─ page.tsx            → Summary Page
+│  │     ├─ metadata.ts
+│  │     └─ components/
+│  │         └─ Confetti.tsx
+│  │
+│  └─ api/                      → Optional future API endpoint
+│
+├─ components/
+│  ├─ ui/                       → Generic components (Button, Card, ProgressBar, ThemeToggle)
+│  ├─ layout/                   → Layout components (Navbar, Footer, StepLayout)
+│  ├─ animations/               → Components using motion/framer presets
+│  └─ journey/                  → UI components used in steps (StepHeader, ChoiceGrid, etc..’)
+│
+├─ hooks/
+│  ├─ useJourneyData.ts         → Managing user's choises
+│  ├─ useTheme.ts
+│  └─ useProgress.ts
+│
+├─ lib/
+│  ├─ metadata.ts               → Functions for handling SEO metadata
+│  ├─ ssg.ts                    → Utilities for generateStaticParams, etc..’
+│  └─ animations.ts             → Common Motion variants definitions
+│
+├─ context/
+│  └─ JourneyContext.tsx        → Global state עם Context API (למעקב אחרי בחירות)
+│
+├─ data/
+│  └─ shared.json               → Data ששותף בין השלבים
+│
+└─ types/
+   └─ index.ts                  → הגדרות TypeScript (JourneyStep, Choice וכו’)
+
+
+```
+
+---
+
+
 ## Preview
 
 **Live site:** [Journey App](https://journey-app-kappa.vercel.app/) 
