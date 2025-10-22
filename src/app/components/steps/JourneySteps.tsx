@@ -1,7 +1,7 @@
 import React from "react";
 import { Plane, Compass, Users } from "lucide-react";
-import { stepSeoMeta } from "@/app/constants/seoMeta/seoMeta";
-import { Theme, JourneyItem, Selections } from "@/app/constants/types";
+import { stepSeoMeta } from "../../constants/seo/seoMeta";
+import { Theme, JourneyItem, Selections } from "../../constants/types";
 const ChoiceStep = React.lazy(() => import("./ChoiceStep"));
 const LandingPage = React.lazy(() => import("../pages/LandingPage"));
 const SummaryPage = React.lazy(() => import("../pages/SummaryPage"));

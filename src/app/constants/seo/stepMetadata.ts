@@ -1,4 +1,4 @@
-import { StepMetadata } from "../../constants/types";
+import { StepMetadata } from "../types";
   
 export const stepMetadata: Record<string, StepMetadata> = {
   0: {
