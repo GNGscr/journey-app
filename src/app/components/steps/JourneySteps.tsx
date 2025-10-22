@@ -1,11 +1,11 @@
-"use client";
 import React from "react";
 import { Plane, Compass, Users } from "lucide-react";
+import { stepSeoMeta } from "@/app/constants/seoMeta/seoMeta";
+import { Theme, JourneyItem, Selections } from "@/app/constants/types";
 const ChoiceStep = React.lazy(() => import("./ChoiceStep"));
 const LandingPage = React.lazy(() => import("../pages/LandingPage"));
 const SummaryPage = React.lazy(() => import("../pages/SummaryPage"));
-import { Theme, JourneyItem, Selections } from "../../constants/types";
-import { stepSeoMeta } from "../../constants/seoMeta/seoMeta";
+
 
 const JourneySteps = (
   journeyData: {
@@ -13,10 +13,7 @@ const JourneySteps = (
     activities: JourneyItem[];
     guides: JourneyItem[];
   },
-  handleSelection: (
-    type: string,
-    item: JourneyItem
-  ) => void,
+  handleSelection: (type: string, item: JourneyItem) => void,
   selections: Selections,
   restartJourney: () => void,
   showConfetti: boolean,

@@ -8,13 +8,11 @@ import useHandleSelection from "../hooks/useHandleSelection";
 import useConfettiEffect from "../hooks/useConfettiEffect";
 import JourneySteps from "../components/steps/JourneySteps";
 import { Themes } from "../constants/enums";
-import { StepKey } from "../constants/types";
-import { stepSeoMeta } from "../constants/seoMeta/seoMeta";
+import SEOHead from "../components/SEOHead";
 const ThemeToggleButton = React.lazy(() => import("../components/ui/ThemeToggleButton"));
 const ProgressIndicator = React.lazy(() => import("../components/ui/ProgressIndicator"));
 const BarsLoader = React.lazy(() => import("../components/ui/BarsLoader"));
 const ErrorMessage = React.lazy(() => import("../components/ui/ErrorMessage"));
-const SeoMeta = React.lazy(() => import("../components/ui/SeoMeta"));
 
 export default function JourneyApp() {
 
@@ -25,9 +23,6 @@ export default function JourneyApp() {
   const [currentStep, setCurrentStep] = useState<number>(0);
   const [selections, setSelections] = useState<Selections>(nullSelections);
   const [showConfetti, setShowConfetti] = useState<boolean>(false);
-  const stepKeys: StepKey[] = ["landing", "destination", "activity", "guide", "summary"];
-  const currentStepKey = stepKeys[currentStep];
-  const seo = stepSeoMeta[currentStepKey];
 
   const { journeyData, isLoading, error } = useJourneyData({
     url: "/api/journey",
@@ -60,21 +55,23 @@ if (error) return <ErrorMessage error={error} theme={theme} />;
 if (!journeyData) return null;
 
   return (
-    <div
-      className={`min-h-screen transition-colors duration-500 ${themeBackground}`}
-    >
-      <SeoMeta title={seo?.title} description={seo?.description} />
-      <ThemeToggleButton
-        theme={theme}
-        onToggle={() => setTheme((prev) => (prev === DARK ? LIGHT : DARK))}
-    />
-      <ProgressIndicator currentStep={currentStep} theme={theme} steps={3} />
+    <>
+        <SEOHead step={currentStep} />
+        <div
+        className={`min-h-screen transition-colors duration-500 ${themeBackground}`}
+        >
+        <ThemeToggleButton
+            theme={theme}
+            onToggle={() => setTheme((prev) => (prev === DARK ? LIGHT : DARK))}
+        />
+        <ProgressIndicator currentStep={currentStep} theme={theme} steps={3} />
 
-      <div className="container mx-auto px-4 py-8 min-h-screen flex items-center justify-center">
-        <AnimatePresence mode="wait">
-          {steps[currentStep]?.component}
-        </AnimatePresence>
-      </div>
-    </div>
+        <div className="container mx-auto px-4 py-8 min-h-screen flex items-center justify-center">
+            <AnimatePresence mode="wait">
+            {steps[currentStep]?.component}
+            </AnimatePresence>
+        </div>
+        </div>
+    </>
   );
 };

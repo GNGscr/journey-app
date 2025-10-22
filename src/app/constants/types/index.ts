@@ -21,6 +21,10 @@ export type SeoMetaProps = {
   description?: string;
 };
 
+export interface SEOHeadProps {
+  step: number;
+}
+
 // Interfaces
 
 export interface JourneyItem {
@@ -77,4 +81,11 @@ export interface LandingPageProps {
 export interface ThemeToggleProps {
   theme: Theme;
   onToggle: () => void;
+}
+
+export interface StepMetadata {
+  name: string;
+  title: string;
+  description: string;
+  keywords: string[];
 }
