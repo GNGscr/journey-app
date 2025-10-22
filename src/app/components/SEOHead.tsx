@@ -39,6 +39,11 @@ const SEOHead: React.FC<SEOHeadProps> = ({ step }) => {
     updateMetaTag('og:description', meta.description, 'og:description');
     updateMetaTag('og:type', 'website', 'og:type');
 
+    // Optional Twitter Card
+    // updateMetaTag('twitter:card', 'summary_large_image');
+    // updateMetaTag('twitter:title', meta.title);
+    // updateMetaTag('twitter:description', meta.description);
+
   }, [step, meta]);
 
   return null;
