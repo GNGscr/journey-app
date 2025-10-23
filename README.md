@@ -247,7 +247,7 @@ packages/
 │   ├── tailwind.config.ts
 │   └── tsconfig.json
 └── types/                     # Shared TypeScript types
-
+```
 
 ---
 
