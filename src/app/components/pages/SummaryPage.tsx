@@ -9,7 +9,7 @@ import {
   selectionVariant,
   restartWrpVariant,
   restartVariant,
-} from "../../constants/variants/variants";
+} from "../../lib/animations";
 import { Themes, Summary } from "../../constants/enums";
 import { SummaryPageProps } from "../../constants/types";
 const Confetti = React.lazy(() => import("../ui/Confetti"));

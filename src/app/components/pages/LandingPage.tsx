@@ -7,7 +7,7 @@ import {
   chooseJourneyVariant,
   embarkAdventureVariant,
   startJourneyVariant,
-} from "../../constants/variants/variants";
+} from "../../lib/animations";
 import { LandingPageProps } from "../../constants/types";
 import { Themes, Journey } from "../../constants/enums";
 

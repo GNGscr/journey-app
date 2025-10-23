@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { progressIndicatorVariant } from "../../constants/variants/variants";
+import { progressIndicatorVariant } from "../../lib/animations";
 import { ProgressIndicatorProps } from "../../constants/types";
 import { Themes, Stpes } from "../../constants/enums";
 

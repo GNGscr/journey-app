@@ -4,7 +4,7 @@ import {
   choiceStepPageVariant,
   cardVariant,
   stepIconVariant,
-} from "../../constants/variants/variants";
+} from "../../lib/animations";
 import { ChoiceStepProps } from "../../constants/types";
 import { Themes } from "../../constants/enums";
 

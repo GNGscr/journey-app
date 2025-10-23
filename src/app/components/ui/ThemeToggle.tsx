@@ -1,4 +1,3 @@
-"use client";
 import { motion } from "framer-motion";
 import { Sun, Moon } from "lucide-react";
 import { themeToggleVariant } from "../../lib/animations";
@@ -13,7 +12,7 @@ const ThemeToggleButton: React.FC<ThemeToggleProps> = ({ theme, onToggle }) => (
       theme === DARK
         ? "bg-yellow-400 text-gray-900"
         : "bg-indigo-600 text-white"
-    } shadow-lg cursor-pointer`}
+    } shadow-lg`}
     variants={themeToggleVariant}
     aria-label="Toggle theme"
   >
