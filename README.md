@@ -105,6 +105,8 @@ src/
 │   │       ├── ProgressIndicator.tsx
 │   │       ├── ThemeToggle.tsx
 │   │       └── SEOHead.tsx             # Updates metadata tags
+│   ├── lib/
+│   │   └── animations.ts               # Animation variants
 │   ├── data/
 │   │   └── journeyData.json            # Default static dataset
 │   ├── services/
@@ -118,10 +120,8 @@ src/
 │   ├── constants/
 │   │   ├── enums/
 │   │   │   └── index.ts
-│   │   ├── types/
-│   │   │   └── index.ts
-│   │   └── variants/
-│   │       └── variants.ts
+│   │   └── types/
+│   │       └── index.ts
 │   ├── ErrorBoundary.js                # Error Boundary for UI fallback
 │   ├── favicon.ico
 │   ├── globals.css
