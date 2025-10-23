@@ -132,90 +132,122 @@ src/
 
 ---
 
+## Alternative Architectures for Different Requirements
 
-# Optional Project Structure (SEO & Pages)
-
-***Every Step will be a seperate page (SSG)**
-
-Each `/journey/step-x/page.tsx` is built in advance with `generateStaticParams()`.
-
-- `app/` folder will manage all the routes routes,
-- `components/` folder will manage the the`UI` component and animations. 
+### **Option 1: SSG (Static Site Generation)**
 
 ```bash
+app/
+├── (steps)/
+│   ├── page.tsx                 # Landing (/)
+│   ├── destination/
+│   │   └── page.tsx            # Pre-rendered with metadata
+│   ├── activity/
+│   │   └── page.tsx            # Pre-rendered with metadata
+│   ├── guide/
+│   │   └── page.tsx            # Pre-rendered with metadata
+│   └── summary/
+│       └── page.tsx            # Pre-rendered with metadata
+├── components/
+│   └── JourneyClient.tsx       # Shared client component
+└── lib/
+    └── metadata.ts             # Centralized SEO config
 
-src/
-├─ app/
-│  ├─ layout.tsx
-│  ├─ globals.css
-│  ├─ page.tsx                  # Landing Page (Hero, CTA)
-│  │
-│  ├─ journey/
-│  │  ├─ layout.tsx             # Layout - used on all stages (ProgressBar, ThemeToggle)
-│  │  ├─ page.tsx               # Redirect to - /journey/step-1 or overview
-│  │  │
-│  │  ├─ step-1/
-│  │  │  ├─ page.tsx            # Choose Destination
-│  │  │  ├─ metadata.ts         # Title / Description
-│  │  │  └─ data.json           # List of available times
-│  │  │
-│  │  ├─ step-2/
-│  │  │  ├─ page.tsx            # Pick Activity
-│  │  │  ├─ metadata.ts
-│  │  │  └─ data.json
-│  │  │
-│  │  ├─ step-3/
-│  │  │  ├─ page.tsx            # Select Guide
-│  │  │  ├─ metadata.ts
-│  │  │  └─ data.json
-│  │  │
-│  │  └─ summary/
-│  │     ├─ page.tsx            # Summary Page
-│  │     ├─ metadata.ts
-│  │     └─ components/
-│  │         └─ Confetti.tsx
-│  │
-│  └─ api/                      # Optional future API endpoint
-│
-├─ components/
-│  ├─ ui/                       # Generic components (Button, Card, ProgressBar, ThemeToggle)
-│  ├─ layout/                   # Layout components (Navbar, Footer, StepLayout)
-│  ├─ animations/               # Components using motion/framer presets
-│  └─ journey/                  # UI components used in steps (StepHeader, ChoiceGrid, etc..’)
-│
-├─ hooks/
-│  ├─ useJourneyData.ts         # Managing user's choises
-│  ├─ useTheme.ts
-│  └─ useProgress.ts
-│
-├─ lib/
-│  ├─ metadata.ts               # Functions for handling SEO metadata
-│  ├─ ssg.ts                    # Utilities for generateStaticParams, etc..’
-│  └─ animations.ts             # Common Motion variants definitions
-│
-├─ context/
-│  └─ JourneyContext.tsx        # Global state with Context API (to keep track of choises)
-│
-├─ data/
-│  └─ shared.json               # Data - shared data between stages
-│
-└─ types/
-   └─ index.ts                  # Definition TypeScript (JourneyStep, Choice, etc..’)
-
-
+// Each page.tsx:
+export const metadata: Metadata = {...};
+export default function StepPage() {
+  return <JourneyClient step={1} />;
+}
 ```
 
-# Optional Dynamic Routing - (Handling different steps) 
-  
-  ***Each Step will be dynamic (for smaller folder structure)***
+**When to use:**
+- SEO is critical
+- Content rarely changes
+- Fast initial page load priority
+- Want URL sharing (send friend link to specific step)
+
+---
+
+### **Option 2: Micro-Frontend Architecture**
 
 ```bash
-
-│  ├─ journey/
-│  │  ├─ [step]/                # all steps metadata can be imported from a single file
-│  │  │  └─ page.tsx            # Using Params to get current step         
-
+packages/
+├── journey-core/              # Shared logic
+│   ├── hooks/
+│   ├── types/
+│   └── utils/
+├── journey-destinations/      # Destination feature
+│   ├── components/
+│   ├── api/
+│   └── package.json
+├── journey-activities/        # Activity feature
+├── journey-guides/            # Guide feature
+└── journey-app/              # Shell app
+    └── page.tsx
 ```
+
+**When to use:**
+- Multiple teams working on different journey steps
+- Independent deployments needed
+- Each step has complex domain logic
+- Want to version features independently
+
+---
+
+### **Option 3: API-First Architecture**
+
+```bash
+app/
+├── api/
+│   ├── journey/
+│   │   └── route.ts           # Journey data
+│   ├── destinations/
+│   │   ├── route.ts           # GET all
+│   │   └── [id]/route.ts      # GET by ID
+│   ├── analytics/
+│   │   └── route.ts           # Track selections
+│   └── recommendations/
+│       └── route.ts           # AI-powered suggestions
+├── components/
+├── hooks/
+│   ├── useDestinations.ts     # React Query hook
+│   ├── useActivities.ts
+│   └── useAnalytics.ts
+└── lib/
+    └── api-client.ts          # Axios/Fetch wrapper
+```
+
+**When to use:**
+- Data comes from external CMS
+- Need real-time updates
+- Multiple clients (web, mobile, desktop)
+- Complex business logic on backend
+- Need caching/revalidation strategies
+
+---
+
+### **Option 4: Monorepo with NX/Turborepo**
+
+```bash
+apps/
+├── web/                       # Next.js app
+├── admin/                     # Journey management dashboard
+└── mobile/                    # React Native app
+
+packages/
+├── ui/                        # Shared components
+│   ├── Button/
+│   ├── Card/
+│   └── Modal/
+├── journey-logic/             # Business logic
+│   ├── validators/
+│   ├── transformers/
+│   └── analytics/
+├── config/                    # Shared config
+│   ├── tailwind.config.ts
+│   └── tsconfig.json
+└── types/                     # Shared TypeScript types
+
 
 ---
 
