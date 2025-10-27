@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   icons: [
     {
-      url: 'https://www.appcharge.com/favicon.ico'
+      url: 'de-logo.ico'
     }
   ]
 };
